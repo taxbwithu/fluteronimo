@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "388816065049",
+    "project_id": "flutteronimo",
+    "storage_bucket": "flutteronimo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388816065049:android:87bc1cb96b0df54dc05088",
+        "android_client_info": {
+          "package_name": "com.mmoson.flutteronimo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388816065049-gba8clqir1sgjk4os7mnkgeqgkk0dv37.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl7fxAgqsY1ZrCvyZecteCdzjj5Zv6T_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388816065049-gba8clqir1sgjk4os7mnkgeqgkk0dv37.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

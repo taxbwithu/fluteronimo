@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mmoson.flutteronimo.flutteronimo">
+    package="com.mmoson.flutteronimo">
    <application
-        android:label="flutteronimo"
+        android:label="Flutter o'Nimo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
