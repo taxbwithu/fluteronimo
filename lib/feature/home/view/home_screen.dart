@@ -4,6 +4,8 @@ import 'package:flutteronimo/common/theme/app_decorator.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
 import 'package:flutteronimo/gen/colors.gen.dart';
 
+import '../../../generated/l10n.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -24,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              AppNavigationBar(screenTitle: "Home"),
+              AppNavigationBar(screenTitle: Texts.current.test_screen_message),
             ],
           ),
         ),
