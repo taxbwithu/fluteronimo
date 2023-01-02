@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "error_view_default_message": MessageLookupByLibrary.simpleMessage(
+            "Coś poszło nie tak, spróbuj ponownie później."),
         "test_screen_message": MessageLookupByLibrary.simpleMessage("Test")
       };
 }

@@ -50,6 +50,16 @@ class Texts {
     return Localizations.of<Texts>(context, Texts);
   }
 
+  /// `Something went wrong, please try again.`
+  String get error_view_default_message {
+    return Intl.message(
+      'Something went wrong, please try again.',
+      name: 'error_view_default_message',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Test`
   String get test_screen_message {
     return Intl.message(
