@@ -1,4 +1,5 @@
 {
   "@@locale": "pl_PL",
+  "error_view_default_message": "Coś poszło nie tak, spróbuj ponownie później.",
   "test_screen_message": "Test"
 }
