@@ -3,23 +3,49 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutteronimo/app/environment.dart';
 import 'package:flutteronimo/common/app_router/app_router.gr.dart';
 import 'package:flutteronimo/generated/l10n.dart';
+import 'package:provider/provider.dart';
+
+import '../common/repositories/dependency_graph.dart';
+import '../common/widgets/multi_locale_controller/multi_locale_controller.dart';
 
 class MyApp extends StatelessWidget {
+  DependencyGraph dependencyGraph;
   final Environment environment;
   final _appRouter = AppRouter();
 
   MyApp({
     required this.environment,
     Key? key,
-  }) : super(key: key);
+  })  : dependencyGraph = DependencyGraph(environment: environment),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return _buildMaterialApp();
+    return MultiProvider(
+      providers: [
+        Provider<DependencyGraph>.value(value: dependencyGraph),
+      ],
+      child: _buildWrappers(),
+    );
   }
 
-  // TODO 29.12 Add MultiLocaleController
-  Widget _buildMaterialApp() {
+  Widget _buildWrappers() {
+    return MultiLocaleController(
+      builder: (context, locale) {
+        return Builder(
+          builder: (context) => _buildMaterialApp(
+            locale: locale,
+            context: context,
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildMaterialApp({
+    required Locale locale,
+    required BuildContext context,
+  }) {
     const localization = AppLocalizationDelegate();
     return MaterialApp.router(
       title: "Flutter Experiment Field",
@@ -33,6 +59,10 @@ class MyApp extends StatelessWidget {
       routeInformationProvider: _appRouter.routeInfoProvider(),
       routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(),
+      locale: locale,
+      builder: (context, widget) {
+        return widget ?? const SizedBox();
+      },
     );
   }
 }
