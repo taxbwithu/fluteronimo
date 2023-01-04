@@ -6,6 +6,16 @@ class AppTextStyle {
       fontSize: 24.0,
       fontFamily: "Roboto",
       fontWeight: FontWeight.w500,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle body() {
+    return const TextStyle(
+      fontSize: 17.0,
+      fontFamily: "Roboto",
+      fontWeight: FontWeight.normal,
+      color: Colors.white,
     );
   }
 }

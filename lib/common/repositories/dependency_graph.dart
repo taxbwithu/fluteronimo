@@ -46,7 +46,7 @@ class DependencyGraph {
     return _repositoryFactory.createMultiLocaleRepository();
   }
 
-  DealsRepository getAppSettingsRepository() {
+  DealsRepository getDealsRepository() {
     return _repositoryFactory.createDealsRepository();
   }
 }

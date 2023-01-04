@@ -11,7 +11,6 @@ class StubDealsRepository extends DealsRepository {
 
   //TODO replace with actual objects and pagination
   @override
-  Future<String> readDealList() {
-    // TODO: implement readDealList
-    throw UnimplementedError();
+  Future<List<String>?> readDealList() async {
+    return service.readDealList();
   }}

@@ -1,9 +1,13 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/theme/app_decorator.dart';
+import 'package:flutteronimo/common/theme/app_text_style.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
+import 'package:flutteronimo/feature/home/vm/home_vm.dart';
 import 'package:flutteronimo/gen/colors.gen.dart';
+import 'package:provider/provider.dart';
 
+import '../../../common/repositories/dependency_graph.dart';
 import '../../../generated/l10n.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +18,19 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late HomeVm _viewModel;
+
+  @override
+  void initState() {
+    final dependencyGraph =
+        Provider.of<DependencyGraph>(context, listen: false);
+
+    _viewModel = HomeVm(dealsRepository: dependencyGraph.getDealsRepository());
+
+    _viewModel.loadScreenData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +44,35 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               AppNavigationBar(screenTitle: Texts.current.test_screen_message),
+              Expanded(child: _buildGameList()),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildGameList() {
+    return StreamBuilder<List<String>?>(
+      stream: _viewModel.screenContentSubject.stream,
+      builder: (context, snapshot) {
+        final data = snapshot.data;
+        if (data != null) {
+          return ListView.builder(
+            itemCount: data.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Text(
+                data[index],
+                style: AppTextStyle.body(),
+              );
+            },
+          );
+        } else {
+          return Container(
+            color: ColorName.primaryDark,
+          );
+        }
+      },
     );
   }
 }

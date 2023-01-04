@@ -55,7 +55,7 @@ class DioHttpService extends HttpService {
   }
 
   String _buildPath({required String path, required ApiVersion apiVersion}) {
-    return "/${describeEnum(apiVersion)}$path";
+    return "/${apiVersion.apiString}$path";
   }
 
   @override
