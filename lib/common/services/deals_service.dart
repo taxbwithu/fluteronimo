@@ -1,5 +1,7 @@
 import 'package:flutteronimo/common/services/http/http_service.dart';
+import 'package:flutteronimo/common/utils/list/list_extension.dart';
 
+import '../data_models/deal_item/deal_item.dart';
 import 'http/service_util.dart';
 
 class DealsService {
@@ -11,9 +13,9 @@ class DealsService {
     required this.httpService,
   });
 
-  Future<List<String>?> readDealList() async {
+  Future<List<DealItem>?> readDealList() async {
     final response = await httpService.get<String>(path: _dealsPath);
     List<dynamic> decodedResponse = ServiceUtil.decodeListResponse(response);
-    return decodedResponse.map((e) => ((e['dealRating'] as String) + " - " + (e['title'] as String))).toList();
+    return decodedResponse.map((e) => DealItem.fromJson(e)).toList();
   }
 }
