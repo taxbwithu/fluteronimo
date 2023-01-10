@@ -60,11 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, snapshot) {
         final data = snapshot.data;
         if (data != null) {
-          return GridView.count(
-            crossAxisCount: 2,
-            children: List.generate(data.length, (index) {
+          return ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) {
               return DealCard(dealItem: data[index]);
-            }),
+            },
           );
         } else {
 
