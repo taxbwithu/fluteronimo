@@ -9,11 +9,10 @@ class AppCoordinator {
   }) {
     context.router.pop(result);
   }
-  
-  navigateToTopicPicker({
+
+  navigateHome({
     required BuildContext context,
-}) {
+  }) {
     context.router.replaceAll([const HomeScreenRoute()]);
   }
-  
 }

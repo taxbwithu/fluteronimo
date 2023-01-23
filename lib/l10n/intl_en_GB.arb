@@ -1,5 +1,7 @@
 {
   "@@locale": "en_GB",
   "error_view_default_message": "Something went wrong, please try again.",
-  "test_screen_message": "Test"
+  "home_screen_message": "Deals",
+
+  "logout_drawer_label": "Logout"
 }

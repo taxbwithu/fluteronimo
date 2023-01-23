@@ -1,7 +1,10 @@
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:flutteronimo/common/factories/components_factory.dart';
 import 'package:flutteronimo/common/theme/app_decorator.dart';
 import 'package:flutteronimo/common/theme/app_text_style.dart';
+import 'package:flutteronimo/common/widgets/drawer/custom_drawer.dart';
+import 'package:flutteronimo/common/widgets/drawer/data_model/drawer_item.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
 import 'package:flutteronimo/feature/home/vm/home_vm.dart';
 import 'package:flutteronimo/feature/home/widgets/deal_card.dart';
@@ -21,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late HomeVm _viewModel;
+  final GlobalKey _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -34,9 +38,19 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void dispose() {
+    _viewModel.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: ColorName.safeAreaDark,
+      drawer: const CustomDrawer(
+        currentItem: DrawerItem.home,
+      ),
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -45,7 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              AppNavigationBar(screenTitle: Texts.current.test_screen_message),
+              AppNavigationBar(
+                screenTitle: Texts.current.home_screen_message,
+                leadingButton: ComponentsFactory.createNavBarDrawerButton(),
+                onLeadingTap: () =>
+                    (_scaffoldKey.currentState as ScaffoldState).openDrawer(),
+              ),
               Expanded(child: _buildGameList()),
             ],
           ),
@@ -61,13 +80,12 @@ class _HomeScreenState extends State<HomeScreen> {
         final data = snapshot.data;
         if (data != null) {
           return ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (BuildContext context, int index) {
+            itemCount: data.length,
+            itemBuilder: (BuildContext context, int index) {
               return DealCard(dealItem: data[index]);
             },
           );
         } else {
-
           return Container(
             color: ColorName.primaryDark,
           );

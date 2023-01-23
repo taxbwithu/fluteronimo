@@ -21,4 +21,8 @@ class HomeVm {
       print(object);
     }
   }
+
+  void dispose() {
+    screenContentSubject.close();
+  }
 }

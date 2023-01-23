@@ -18,4 +18,13 @@ class AppTextStyle {
       color: Colors.white,
     );
   }
+
+  static TextStyle bold() {
+    return const TextStyle(
+      fontSize: 17.0,
+      fontFamily: "Roboto",
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+  }
 }

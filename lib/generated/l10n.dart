@@ -60,11 +60,21 @@ class Texts {
     );
   }
 
-  /// `Test`
-  String get test_screen_message {
+  /// `Deals`
+  String get home_screen_message {
     return Intl.message(
-      'Test',
-      name: 'test_screen_message',
+      'Deals',
+      name: 'home_screen_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout_drawer_label {
+    return Intl.message(
+      'Logout',
+      name: 'logout_drawer_label',
       desc: '',
       args: [],
     );
