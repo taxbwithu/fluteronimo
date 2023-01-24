@@ -3,5 +3,7 @@
   "error_view_default_message": "Something went wrong, please try again.",
   "home_screen_message": "Deals",
 
-  "logout_drawer_label": "Logout"
+  "logout_drawer_label": "Logout",
+
+  "deal_details_screen_label": "Details"
 }

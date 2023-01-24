@@ -6,9 +6,11 @@ import 'package:flutteronimo/common/theme/app_text_style.dart';
 
 class DealCard extends StatefulWidget {
   final DealItem dealItem;
+  final Function(String) onTap;
 
   const DealCard({
     required this.dealItem,
+    required this.onTap,
     Key? key,
   }) : super(key: key);
 
@@ -21,24 +23,27 @@ class _DealCardState extends State<DealCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-        decoration: BoxDecoration(
-          color: Colors.white12,
-          borderRadius: BorderRadius.circular(4.0),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              flex: 3,
-              child: _buildGameInfo(),
-            ),
-            Expanded(
-              flex: 1,
-              child: _buildRatingComponent(),
-            ),
-          ],
+      child: InkWell(
+        onTap: () => widget.onTap(widget.dealItem.dealID),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+          decoration: BoxDecoration(
+            color: Colors.white12,
+            borderRadius: BorderRadius.circular(4.0),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 3,
+                child: _buildGameInfo(),
+              ),
+              Expanded(
+                flex: 1,
+                child: _buildRatingComponent(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -102,7 +107,8 @@ class _DealCardState extends State<DealCard> {
   }
 
   Widget _buildPriceList() {
-    return Row(crossAxisAlignment: CrossAxisAlignment.end,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         _buildPastPrice(),
         const SizedBox(width: 8.0),
@@ -112,9 +118,17 @@ class _DealCardState extends State<DealCard> {
   }
 
   Widget _buildPastPrice() {
-    return Text(widget.dealItem.normalPrice, style: AppTextStyle.body().copyWith(color: Colors.white38, fontSize: 13.0),);
+    return Text(
+      widget.dealItem.normalPrice,
+      style:
+          AppTextStyle.body().copyWith(color: Colors.white38, fontSize: 13.0),
+    );
   }
+
   Widget _buildCurrentPrice() {
-    return Text(widget.dealItem.salePrice + " USD", style: AppTextStyle.body().copyWith(fontSize: 15.0),);
+    return Text(
+      widget.dealItem.salePrice + " USD",
+      style: AppTextStyle.body().copyWith(fontSize: 15.0),
+    );
   }
 }

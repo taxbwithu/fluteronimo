@@ -68,7 +68,7 @@ class _AppNavigationBarState extends State<AppNavigationBar> {
     required Widget? buttonContent,
   }) {
     if (onButtonTap == null || buttonContent == null) {
-      return const SizedBox();
+      return const SizedBox(width: 24,);
     }
     return InkWell(
       onTap: () => onButtonTap(),

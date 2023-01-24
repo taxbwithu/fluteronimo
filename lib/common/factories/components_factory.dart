@@ -12,4 +12,12 @@ class ComponentsFactory {
       color: Colors.white,
     );
   }
+
+  static Widget createBackArrowButton() {
+    return Assets.images.backArrow.image(
+      height: _navBarIconHeight,
+      width: _navBarIconWidth,
+      color: Colors.white,
+    );
+  }
 }

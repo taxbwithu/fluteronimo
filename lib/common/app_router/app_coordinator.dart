@@ -15,4 +15,9 @@ class AppCoordinator {
   }) {
     context.router.replaceAll([const HomeScreenRoute()]);
   }
+
+  navigateToDealDetails(
+      {required BuildContext context, required String dealId}) {
+    context.router.push(DealDetailsScreenRoute(dealId: dealId));
+  }
 }

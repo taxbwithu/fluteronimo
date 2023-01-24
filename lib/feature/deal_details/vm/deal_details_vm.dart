@@ -1,35 +1,37 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutteronimo/common/app_router/app_coordinator.dart';
+import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
 import 'package:flutteronimo/common/data_models/deal_item/deal_item.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/utils/rx/rx_extensions.dart';
 import 'package:rxdart/rxdart.dart';
 
-class HomeVm {
+class DealDetailsVm {
   final DealsRepository dealsRepository;
-  final screenContentSubject = BehaviorSubject<List<DealItem>?>.seeded(null);
+  final screenContentSubject = BehaviorSubject<DealDetails?>.seeded(null);
   final _appCoordinator = AppCoordinator();
 
-  HomeVm({
+  DealDetailsVm({
     required this.dealsRepository,
   });
 
-  Future loadScreenData() async {
+  Future loadScreenData({
+    required String dealId,
+  }) async {
     try {
-      final result = await dealsRepository.readDealList();
+      final serverData = await dealsRepository.readDealDetails(dealId: dealId);
       print("done");
-      screenContentSubject.addSafe(result);
+      screenContentSubject.addSafe(serverData);
     } catch (object) {
       // TODO replace with error handling
       print(object);
     }
   }
 
-  void openDealDetails({
+  void closeScreen({
     required BuildContext context,
-    required String dealId,
   }) {
-    _appCoordinator.navigateToDealDetails(context: context, dealId: dealId);
+    _appCoordinator.popLast(context: context);
   }
 
   void dispose() {

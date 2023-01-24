@@ -1,3 +1,4 @@
+import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/utils/extensions/iterable_extensions.dart';
 
@@ -28,7 +29,7 @@ class StubDealsRepository extends DealsRepository {
       return null;
     }
     for (var item in refList) {
-      if (list.firstWhereOrNull((e) => e.title == item.title) != null){
+      if (list.firstWhereOrNull((e) => e.title == item.title) != null) {
         continue;
       }
       final bestDeal = refList
@@ -42,4 +43,9 @@ class StubDealsRepository extends DealsRepository {
     return list;
   }
 
+  Future<DealDetails> readDealDetails({
+    required String dealId,
+  }) async {
+    return service.readDealDetails(dealId: dealId);
+  }
 }

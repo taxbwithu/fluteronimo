@@ -1,8 +1,6 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/factories/components_factory.dart';
 import 'package:flutteronimo/common/theme/app_decorator.dart';
-import 'package:flutteronimo/common/theme/app_text_style.dart';
 import 'package:flutteronimo/common/widgets/drawer/custom_drawer.dart';
 import 'package:flutteronimo/common/widgets/drawer/data_model/drawer_item.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
@@ -82,12 +80,18 @@ class _HomeScreenState extends State<HomeScreen> {
           return ListView.builder(
             itemCount: data.length,
             itemBuilder: (BuildContext context, int index) {
-              return DealCard(dealItem: data[index]);
+              return DealCard(
+                dealItem: data[index],
+                onTap: (dealId) => _viewModel.openDealDetails(
+                  context: context,
+                  dealId: dealId,
+                ),
+              );
             },
           );
         } else {
           return Container(
-            color: ColorName.primaryDark,
+            color: ColorName.safeAreaDark,
           );
         }
       },

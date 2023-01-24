@@ -80,12 +80,12 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: Roboto
+    - family: Montserrat
       fonts:
-        - asset: assets/fonts/roboto/Roboto-Bold.ttf
-        - asset: assets/fonts/roboto/Roboto-Italic.ttf
-        - asset: assets/fonts/roboto/Roboto-Regular.ttf
-        - asset: assets/fonts/roboto/Roboto-Light.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Bold.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Italic.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Light.ttf
 
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)

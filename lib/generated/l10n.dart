@@ -79,6 +79,16 @@ class Texts {
       args: [],
     );
   }
+
+  /// `Details`
+  String get deal_details_screen_label {
+    return Intl.message(
+      'Details',
+      name: 'deal_details_screen_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Texts> {
