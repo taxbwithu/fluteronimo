@@ -21,9 +21,9 @@ DealDetails _$DealDetailsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DealDetails {
   @JsonKey(name: "gameInfo")
-  GameInfo get storeID => throw _privateConstructorUsedError;
+  GameInfo get gameInfo => throw _privateConstructorUsedError;
   @JsonKey(name: "cheapestPrice")
-  CheapestPrice get gameID => throw _privateConstructorUsedError;
+  CheapestPrice get cheapestPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,11 +38,11 @@ abstract class $DealDetailsCopyWith<$Res> {
       _$DealDetailsCopyWithImpl<$Res, DealDetails>;
   @useResult
   $Res call(
-      {@JsonKey(name: "gameInfo") GameInfo storeID,
-      @JsonKey(name: "cheapestPrice") CheapestPrice gameID});
+      {@JsonKey(name: "gameInfo") GameInfo gameInfo,
+      @JsonKey(name: "cheapestPrice") CheapestPrice cheapestPrice});
 
-  $GameInfoCopyWith<$Res> get storeID;
-  $CheapestPriceCopyWith<$Res> get gameID;
+  $GameInfoCopyWith<$Res> get gameInfo;
+  $CheapestPriceCopyWith<$Res> get cheapestPrice;
 }
 
 /// @nodoc
@@ -58,34 +58,34 @@ class _$DealDetailsCopyWithImpl<$Res, $Val extends DealDetails>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? storeID = null,
-    Object? gameID = null,
+    Object? gameInfo = null,
+    Object? cheapestPrice = null,
   }) {
     return _then(_value.copyWith(
-      storeID: null == storeID
-          ? _value.storeID
-          : storeID // ignore: cast_nullable_to_non_nullable
+      gameInfo: null == gameInfo
+          ? _value.gameInfo
+          : gameInfo // ignore: cast_nullable_to_non_nullable
               as GameInfo,
-      gameID: null == gameID
-          ? _value.gameID
-          : gameID // ignore: cast_nullable_to_non_nullable
+      cheapestPrice: null == cheapestPrice
+          ? _value.cheapestPrice
+          : cheapestPrice // ignore: cast_nullable_to_non_nullable
               as CheapestPrice,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $GameInfoCopyWith<$Res> get storeID {
-    return $GameInfoCopyWith<$Res>(_value.storeID, (value) {
-      return _then(_value.copyWith(storeID: value) as $Val);
+  $GameInfoCopyWith<$Res> get gameInfo {
+    return $GameInfoCopyWith<$Res>(_value.gameInfo, (value) {
+      return _then(_value.copyWith(gameInfo: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CheapestPriceCopyWith<$Res> get gameID {
-    return $CheapestPriceCopyWith<$Res>(_value.gameID, (value) {
-      return _then(_value.copyWith(gameID: value) as $Val);
+  $CheapestPriceCopyWith<$Res> get cheapestPrice {
+    return $CheapestPriceCopyWith<$Res>(_value.cheapestPrice, (value) {
+      return _then(_value.copyWith(cheapestPrice: value) as $Val);
     });
   }
 }
@@ -99,13 +99,13 @@ abstract class _$$_DealDetailsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "gameInfo") GameInfo storeID,
-      @JsonKey(name: "cheapestPrice") CheapestPrice gameID});
+      {@JsonKey(name: "gameInfo") GameInfo gameInfo,
+      @JsonKey(name: "cheapestPrice") CheapestPrice cheapestPrice});
 
   @override
-  $GameInfoCopyWith<$Res> get storeID;
+  $GameInfoCopyWith<$Res> get gameInfo;
   @override
-  $CheapestPriceCopyWith<$Res> get gameID;
+  $CheapestPriceCopyWith<$Res> get cheapestPrice;
 }
 
 /// @nodoc
@@ -119,17 +119,17 @@ class __$$_DealDetailsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? storeID = null,
-    Object? gameID = null,
+    Object? gameInfo = null,
+    Object? cheapestPrice = null,
   }) {
     return _then(_$_DealDetails(
-      storeID: null == storeID
-          ? _value.storeID
-          : storeID // ignore: cast_nullable_to_non_nullable
+      gameInfo: null == gameInfo
+          ? _value.gameInfo
+          : gameInfo // ignore: cast_nullable_to_non_nullable
               as GameInfo,
-      gameID: null == gameID
-          ? _value.gameID
-          : gameID // ignore: cast_nullable_to_non_nullable
+      cheapestPrice: null == cheapestPrice
+          ? _value.cheapestPrice
+          : cheapestPrice // ignore: cast_nullable_to_non_nullable
               as CheapestPrice,
     ));
   }
@@ -140,22 +140,22 @@ class __$$_DealDetailsCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_DealDetails implements _DealDetails {
   const _$_DealDetails(
-      {@JsonKey(name: "gameInfo") required this.storeID,
-      @JsonKey(name: "cheapestPrice") required this.gameID});
+      {@JsonKey(name: "gameInfo") required this.gameInfo,
+      @JsonKey(name: "cheapestPrice") required this.cheapestPrice});
 
   factory _$_DealDetails.fromJson(Map<String, dynamic> json) =>
       _$$_DealDetailsFromJson(json);
 
   @override
   @JsonKey(name: "gameInfo")
-  final GameInfo storeID;
+  final GameInfo gameInfo;
   @override
   @JsonKey(name: "cheapestPrice")
-  final CheapestPrice gameID;
+  final CheapestPrice cheapestPrice;
 
   @override
   String toString() {
-    return 'DealDetails(storeID: $storeID, gameID: $gameID)';
+    return 'DealDetails(gameInfo: $gameInfo, cheapestPrice: $cheapestPrice)';
   }
 
   @override
@@ -163,13 +163,15 @@ class _$_DealDetails implements _DealDetails {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DealDetails &&
-            (identical(other.storeID, storeID) || other.storeID == storeID) &&
-            (identical(other.gameID, gameID) || other.gameID == gameID));
+            (identical(other.gameInfo, gameInfo) ||
+                other.gameInfo == gameInfo) &&
+            (identical(other.cheapestPrice, cheapestPrice) ||
+                other.cheapestPrice == cheapestPrice));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, storeID, gameID);
+  int get hashCode => Object.hash(runtimeType, gameInfo, cheapestPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -188,19 +190,19 @@ class _$_DealDetails implements _DealDetails {
 abstract class _DealDetails implements DealDetails {
   const factory _DealDetails(
       {@JsonKey(name: "gameInfo")
-          required final GameInfo storeID,
+          required final GameInfo gameInfo,
       @JsonKey(name: "cheapestPrice")
-          required final CheapestPrice gameID}) = _$_DealDetails;
+          required final CheapestPrice cheapestPrice}) = _$_DealDetails;
 
   factory _DealDetails.fromJson(Map<String, dynamic> json) =
       _$_DealDetails.fromJson;
 
   @override
   @JsonKey(name: "gameInfo")
-  GameInfo get storeID;
+  GameInfo get gameInfo;
   @override
   @JsonKey(name: "cheapestPrice")
-  CheapestPrice get gameID;
+  CheapestPrice get cheapestPrice;
   @override
   @JsonKey(ignore: true)
   _$$_DealDetailsCopyWith<_$_DealDetails> get copyWith =>

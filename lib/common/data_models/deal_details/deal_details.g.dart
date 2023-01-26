@@ -8,13 +8,13 @@ part of 'deal_details.dart';
 
 _$_DealDetails _$$_DealDetailsFromJson(Map<String, dynamic> json) =>
     _$_DealDetails(
-      storeID: GameInfo.fromJson(json['gameInfo'] as Map<String, dynamic>),
-      gameID:
+      gameInfo: GameInfo.fromJson(json['gameInfo'] as Map<String, dynamic>),
+      cheapestPrice:
           CheapestPrice.fromJson(json['cheapestPrice'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_DealDetailsToJson(_$_DealDetails instance) =>
     <String, dynamic>{
-      'gameInfo': instance.storeID.toJson(),
-      'cheapestPrice': instance.gameID.toJson(),
+      'gameInfo': instance.gameInfo.toJson(),
+      'cheapestPrice': instance.cheapestPrice.toJson(),
     };

@@ -60,6 +60,16 @@ class Texts {
     );
   }
 
+  /// `--`
+  String get common_no_data_separator {
+    return Intl.message(
+      '--',
+      name: 'common_no_data_separator',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Deals`
   String get home_screen_message {
     return Intl.message(

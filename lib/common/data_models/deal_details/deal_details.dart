@@ -10,8 +10,8 @@ part 'deal_details.g.dart';
 class DealDetails with _$DealDetails {
   @JsonSerializable(explicitToJson: true)
   const factory DealDetails({
-    @JsonKey(name: "gameInfo") required GameInfo storeID,
-    @JsonKey(name: "cheapestPrice") required CheapestPrice gameID,
+    @JsonKey(name: "gameInfo") required GameInfo gameInfo,
+    @JsonKey(name: "cheapestPrice") required CheapestPrice cheapestPrice,
   }) = _DealDetails;
 
   factory DealDetails.fromJson(Map<String, Object?> json) =>

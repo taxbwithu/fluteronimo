@@ -27,4 +27,14 @@ class AppTextStyle {
       color: Colors.white,
     );
   }
+
+  static TextStyle italic() {
+    return const TextStyle(
+      fontSize: 17.0,
+      fontFamily: "Roboto",
+      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.normal,
+      color: Colors.white,
+    );
+  }
 }

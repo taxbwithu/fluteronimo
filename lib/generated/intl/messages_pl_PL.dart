@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "common_no_data_separator": MessageLookupByLibrary.simpleMessage("--"),
         "deal_details_screen_label":
             MessageLookupByLibrary.simpleMessage("Detale"),
         "error_view_default_message": MessageLookupByLibrary.simpleMessage(

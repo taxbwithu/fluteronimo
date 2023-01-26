@@ -7,18 +7,18 @@ part of 'game_info.dart';
 // **************************************************************************
 
 _$_GameInfo _$$_GameInfoFromJson(Map<String, dynamic> json) => _$_GameInfo(
-      storeID: json['storeID'] as String,
-      gameID: json['gameID'] as String,
-      name: json['name'] as String,
-      steamAppID: json['steamAppID'] as String,
-      salePrice: json['salePrice'] as String,
-      retailPrice: json['retailPrice'] as String,
-      steamRatingText: json['steamRatingText'] as String,
-      steamRatingPercent: json['steamRatingPercent'] as String,
-      metacriticScore: json['metacriticScore'] as String,
+      storeID: json['storeID'] as String?,
+      gameID: json['gameID'] as String?,
+      name: json['name'] as String?,
+      steamAppID: json['steamAppID'] as String?,
+      salePrice: json['salePrice'] as String?,
+      retailPrice: json['retailPrice'] as String?,
+      steamRatingText: json['steamRatingText'] as String?,
+      steamRatingPercent: json['steamRatingPercent'] as String?,
+      metacriticScore: json['metacriticScore'] as String?,
       releaseDate: _timestampToDate(json['releaseDate'] as int),
-      publisher: json['publisher'] as String,
-      thumb: json['thumb'] as String,
+      publisher: json['publisher'] as String?,
+      thumb: json['thumb'] as String?,
     );
 
 Map<String, dynamic> _$$_GameInfoToJson(_$_GameInfo instance) =>

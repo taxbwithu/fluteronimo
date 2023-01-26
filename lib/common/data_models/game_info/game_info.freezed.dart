@@ -21,29 +21,29 @@ GameInfo _$GameInfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GameInfo {
   @JsonKey(name: "storeID")
-  String get storeID => throw _privateConstructorUsedError;
+  String? get storeID => throw _privateConstructorUsedError;
   @JsonKey(name: "gameID")
-  String get gameID => throw _privateConstructorUsedError;
+  String? get gameID => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: "steamAppID")
-  String get steamAppID => throw _privateConstructorUsedError;
+  String? get steamAppID => throw _privateConstructorUsedError;
   @JsonKey(name: "salePrice")
-  String get salePrice => throw _privateConstructorUsedError;
+  String? get salePrice => throw _privateConstructorUsedError;
   @JsonKey(name: "retailPrice")
-  String get retailPrice => throw _privateConstructorUsedError;
+  String? get retailPrice => throw _privateConstructorUsedError;
   @JsonKey(name: "steamRatingText")
-  String get steamRatingText => throw _privateConstructorUsedError;
+  String? get steamRatingText => throw _privateConstructorUsedError;
   @JsonKey(name: "steamRatingPercent")
-  String get steamRatingPercent => throw _privateConstructorUsedError;
+  String? get steamRatingPercent => throw _privateConstructorUsedError;
   @JsonKey(name: "metacriticScore")
-  String get metacriticScore => throw _privateConstructorUsedError;
+  String? get metacriticScore => throw _privateConstructorUsedError;
   @JsonKey(name: "releaseDate", fromJson: _timestampToDate)
   DateTime? get releaseDate => throw _privateConstructorUsedError;
   @JsonKey(name: "publisher")
-  String get publisher => throw _privateConstructorUsedError;
+  String? get publisher => throw _privateConstructorUsedError;
   @JsonKey(name: "thumb")
-  String get thumb => throw _privateConstructorUsedError;
+  String? get thumb => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -58,29 +58,29 @@ abstract class $GameInfoCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "storeID")
-          String storeID,
+          String? storeID,
       @JsonKey(name: "gameID")
-          String gameID,
+          String? gameID,
       @JsonKey(name: "name")
-          String name,
+          String? name,
       @JsonKey(name: "steamAppID")
-          String steamAppID,
+          String? steamAppID,
       @JsonKey(name: "salePrice")
-          String salePrice,
+          String? salePrice,
       @JsonKey(name: "retailPrice")
-          String retailPrice,
+          String? retailPrice,
       @JsonKey(name: "steamRatingText")
-          String steamRatingText,
+          String? steamRatingText,
       @JsonKey(name: "steamRatingPercent")
-          String steamRatingPercent,
+          String? steamRatingPercent,
       @JsonKey(name: "metacriticScore")
-          String metacriticScore,
+          String? metacriticScore,
       @JsonKey(name: "releaseDate", fromJson: _timestampToDate)
           DateTime? releaseDate,
       @JsonKey(name: "publisher")
-          String publisher,
+          String? publisher,
       @JsonKey(name: "thumb")
-          String thumb});
+          String? thumb});
 }
 
 /// @nodoc
@@ -96,68 +96,68 @@ class _$GameInfoCopyWithImpl<$Res, $Val extends GameInfo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? storeID = null,
-    Object? gameID = null,
-    Object? name = null,
-    Object? steamAppID = null,
-    Object? salePrice = null,
-    Object? retailPrice = null,
-    Object? steamRatingText = null,
-    Object? steamRatingPercent = null,
-    Object? metacriticScore = null,
+    Object? storeID = freezed,
+    Object? gameID = freezed,
+    Object? name = freezed,
+    Object? steamAppID = freezed,
+    Object? salePrice = freezed,
+    Object? retailPrice = freezed,
+    Object? steamRatingText = freezed,
+    Object? steamRatingPercent = freezed,
+    Object? metacriticScore = freezed,
     Object? releaseDate = freezed,
-    Object? publisher = null,
-    Object? thumb = null,
+    Object? publisher = freezed,
+    Object? thumb = freezed,
   }) {
     return _then(_value.copyWith(
-      storeID: null == storeID
+      storeID: freezed == storeID
           ? _value.storeID
           : storeID // ignore: cast_nullable_to_non_nullable
-              as String,
-      gameID: null == gameID
+              as String?,
+      gameID: freezed == gameID
           ? _value.gameID
           : gameID // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      steamAppID: null == steamAppID
+              as String?,
+      steamAppID: freezed == steamAppID
           ? _value.steamAppID
           : steamAppID // ignore: cast_nullable_to_non_nullable
-              as String,
-      salePrice: null == salePrice
+              as String?,
+      salePrice: freezed == salePrice
           ? _value.salePrice
           : salePrice // ignore: cast_nullable_to_non_nullable
-              as String,
-      retailPrice: null == retailPrice
+              as String?,
+      retailPrice: freezed == retailPrice
           ? _value.retailPrice
           : retailPrice // ignore: cast_nullable_to_non_nullable
-              as String,
-      steamRatingText: null == steamRatingText
+              as String?,
+      steamRatingText: freezed == steamRatingText
           ? _value.steamRatingText
           : steamRatingText // ignore: cast_nullable_to_non_nullable
-              as String,
-      steamRatingPercent: null == steamRatingPercent
+              as String?,
+      steamRatingPercent: freezed == steamRatingPercent
           ? _value.steamRatingPercent
           : steamRatingPercent // ignore: cast_nullable_to_non_nullable
-              as String,
-      metacriticScore: null == metacriticScore
+              as String?,
+      metacriticScore: freezed == metacriticScore
           ? _value.metacriticScore
           : metacriticScore // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      publisher: null == publisher
+      publisher: freezed == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumb: null == thumb
+              as String?,
+      thumb: freezed == thumb
           ? _value.thumb
           : thumb // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -171,29 +171,29 @@ abstract class _$$_GameInfoCopyWith<$Res> implements $GameInfoCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: "storeID")
-          String storeID,
+          String? storeID,
       @JsonKey(name: "gameID")
-          String gameID,
+          String? gameID,
       @JsonKey(name: "name")
-          String name,
+          String? name,
       @JsonKey(name: "steamAppID")
-          String steamAppID,
+          String? steamAppID,
       @JsonKey(name: "salePrice")
-          String salePrice,
+          String? salePrice,
       @JsonKey(name: "retailPrice")
-          String retailPrice,
+          String? retailPrice,
       @JsonKey(name: "steamRatingText")
-          String steamRatingText,
+          String? steamRatingText,
       @JsonKey(name: "steamRatingPercent")
-          String steamRatingPercent,
+          String? steamRatingPercent,
       @JsonKey(name: "metacriticScore")
-          String metacriticScore,
+          String? metacriticScore,
       @JsonKey(name: "releaseDate", fromJson: _timestampToDate)
           DateTime? releaseDate,
       @JsonKey(name: "publisher")
-          String publisher,
+          String? publisher,
       @JsonKey(name: "thumb")
-          String thumb});
+          String? thumb});
 }
 
 /// @nodoc
@@ -207,68 +207,68 @@ class __$$_GameInfoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? storeID = null,
-    Object? gameID = null,
-    Object? name = null,
-    Object? steamAppID = null,
-    Object? salePrice = null,
-    Object? retailPrice = null,
-    Object? steamRatingText = null,
-    Object? steamRatingPercent = null,
-    Object? metacriticScore = null,
+    Object? storeID = freezed,
+    Object? gameID = freezed,
+    Object? name = freezed,
+    Object? steamAppID = freezed,
+    Object? salePrice = freezed,
+    Object? retailPrice = freezed,
+    Object? steamRatingText = freezed,
+    Object? steamRatingPercent = freezed,
+    Object? metacriticScore = freezed,
     Object? releaseDate = freezed,
-    Object? publisher = null,
-    Object? thumb = null,
+    Object? publisher = freezed,
+    Object? thumb = freezed,
   }) {
     return _then(_$_GameInfo(
-      storeID: null == storeID
+      storeID: freezed == storeID
           ? _value.storeID
           : storeID // ignore: cast_nullable_to_non_nullable
-              as String,
-      gameID: null == gameID
+              as String?,
+      gameID: freezed == gameID
           ? _value.gameID
           : gameID // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      steamAppID: null == steamAppID
+              as String?,
+      steamAppID: freezed == steamAppID
           ? _value.steamAppID
           : steamAppID // ignore: cast_nullable_to_non_nullable
-              as String,
-      salePrice: null == salePrice
+              as String?,
+      salePrice: freezed == salePrice
           ? _value.salePrice
           : salePrice // ignore: cast_nullable_to_non_nullable
-              as String,
-      retailPrice: null == retailPrice
+              as String?,
+      retailPrice: freezed == retailPrice
           ? _value.retailPrice
           : retailPrice // ignore: cast_nullable_to_non_nullable
-              as String,
-      steamRatingText: null == steamRatingText
+              as String?,
+      steamRatingText: freezed == steamRatingText
           ? _value.steamRatingText
           : steamRatingText // ignore: cast_nullable_to_non_nullable
-              as String,
-      steamRatingPercent: null == steamRatingPercent
+              as String?,
+      steamRatingPercent: freezed == steamRatingPercent
           ? _value.steamRatingPercent
           : steamRatingPercent // ignore: cast_nullable_to_non_nullable
-              as String,
-      metacriticScore: null == metacriticScore
+              as String?,
+      metacriticScore: freezed == metacriticScore
           ? _value.metacriticScore
           : metacriticScore // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      publisher: null == publisher
+      publisher: freezed == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumb: null == thumb
+              as String?,
+      thumb: freezed == thumb
           ? _value.thumb
           : thumb // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -308,40 +308,40 @@ class _$_GameInfo implements _GameInfo {
 
   @override
   @JsonKey(name: "storeID")
-  final String storeID;
+  final String? storeID;
   @override
   @JsonKey(name: "gameID")
-  final String gameID;
+  final String? gameID;
   @override
   @JsonKey(name: "name")
-  final String name;
+  final String? name;
   @override
   @JsonKey(name: "steamAppID")
-  final String steamAppID;
+  final String? steamAppID;
   @override
   @JsonKey(name: "salePrice")
-  final String salePrice;
+  final String? salePrice;
   @override
   @JsonKey(name: "retailPrice")
-  final String retailPrice;
+  final String? retailPrice;
   @override
   @JsonKey(name: "steamRatingText")
-  final String steamRatingText;
+  final String? steamRatingText;
   @override
   @JsonKey(name: "steamRatingPercent")
-  final String steamRatingPercent;
+  final String? steamRatingPercent;
   @override
   @JsonKey(name: "metacriticScore")
-  final String metacriticScore;
+  final String? metacriticScore;
   @override
   @JsonKey(name: "releaseDate", fromJson: _timestampToDate)
   final DateTime? releaseDate;
   @override
   @JsonKey(name: "publisher")
-  final String publisher;
+  final String? publisher;
   @override
   @JsonKey(name: "thumb")
-  final String thumb;
+  final String? thumb;
 
   @override
   String toString() {
@@ -409,68 +409,68 @@ class _$_GameInfo implements _GameInfo {
 abstract class _GameInfo implements GameInfo {
   const factory _GameInfo(
       {@JsonKey(name: "storeID")
-          required final String storeID,
+          required final String? storeID,
       @JsonKey(name: "gameID")
-          required final String gameID,
+          required final String? gameID,
       @JsonKey(name: "name")
-          required final String name,
+          required final String? name,
       @JsonKey(name: "steamAppID")
-          required final String steamAppID,
+          required final String? steamAppID,
       @JsonKey(name: "salePrice")
-          required final String salePrice,
+          required final String? salePrice,
       @JsonKey(name: "retailPrice")
-          required final String retailPrice,
+          required final String? retailPrice,
       @JsonKey(name: "steamRatingText")
-          required final String steamRatingText,
+          required final String? steamRatingText,
       @JsonKey(name: "steamRatingPercent")
-          required final String steamRatingPercent,
+          required final String? steamRatingPercent,
       @JsonKey(name: "metacriticScore")
-          required final String metacriticScore,
+          required final String? metacriticScore,
       @JsonKey(name: "releaseDate", fromJson: _timestampToDate)
           required final DateTime? releaseDate,
       @JsonKey(name: "publisher")
-          required final String publisher,
+          required final String? publisher,
       @JsonKey(name: "thumb")
-          required final String thumb}) = _$_GameInfo;
+          required final String? thumb}) = _$_GameInfo;
 
   factory _GameInfo.fromJson(Map<String, dynamic> json) = _$_GameInfo.fromJson;
 
   @override
   @JsonKey(name: "storeID")
-  String get storeID;
+  String? get storeID;
   @override
   @JsonKey(name: "gameID")
-  String get gameID;
+  String? get gameID;
   @override
   @JsonKey(name: "name")
-  String get name;
+  String? get name;
   @override
   @JsonKey(name: "steamAppID")
-  String get steamAppID;
+  String? get steamAppID;
   @override
   @JsonKey(name: "salePrice")
-  String get salePrice;
+  String? get salePrice;
   @override
   @JsonKey(name: "retailPrice")
-  String get retailPrice;
+  String? get retailPrice;
   @override
   @JsonKey(name: "steamRatingText")
-  String get steamRatingText;
+  String? get steamRatingText;
   @override
   @JsonKey(name: "steamRatingPercent")
-  String get steamRatingPercent;
+  String? get steamRatingPercent;
   @override
   @JsonKey(name: "metacriticScore")
-  String get metacriticScore;
+  String? get metacriticScore;
   @override
   @JsonKey(name: "releaseDate", fromJson: _timestampToDate)
   DateTime? get releaseDate;
   @override
   @JsonKey(name: "publisher")
-  String get publisher;
+  String? get publisher;
   @override
   @JsonKey(name: "thumb")
-  String get thumb;
+  String? get thumb;
   @override
   @JsonKey(ignore: true)
   _$$_GameInfoCopyWith<_$_GameInfo> get copyWith =>

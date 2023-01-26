@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import '../../../common/factories/components_factory.dart';
 import '../../../common/theme/app_decorator.dart';
 import '../../../common/widgets/navigation_bar/app_navigation_bar.dart';
+import '../widget/deal_details_card.dart';
 
 class DealDetailsScreen extends StatefulWidget {
   final String dealId;
@@ -31,7 +32,7 @@ class _DealDetailsScreenState extends State<DealDetailsScreen> {
   @override
   void initState() {
     final dependencyGraph =
-        Provider.of<DependencyGraph>(context, listen: false);
+    Provider.of<DependencyGraph>(context, listen: false);
 
     _viewModel =
         DealDetailsVm(dealsRepository: dependencyGraph.getDealsRepository());
@@ -94,10 +95,8 @@ class _DealDetailsScreenState extends State<DealDetailsScreen> {
               color: Colors.black12,
               borderRadius: BorderRadius.circular(4.0),
             ),
-            child: Column(
-              children: [
-                Text(data.toString(), style: AppTextStyle.body()),
-              ],
+            child: DealDetailsCard(
+              data: data,
             ),
           );
         } else {
