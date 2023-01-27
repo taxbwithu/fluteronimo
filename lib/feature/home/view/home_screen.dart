@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final dependencyGraph =
         Provider.of<DependencyGraph>(context, listen: false);
 
-    _viewModel = HomeVm(dealsRepository: dependencyGraph.getDealsRepository());
+    _viewModel = HomeVm(dealsRepository: dependencyGraph.getDealsRepository(), storesRepository: dependencyGraph.getStoresRepository(),);
 
     _viewModel.loadScreenData();
     super.initState();

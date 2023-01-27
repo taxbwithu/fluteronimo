@@ -1,6 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/repositories/storage_and_settings/shared_preferences_storage.dart';
+import 'package:flutteronimo/common/repositories/stores/stores_repository.dart';
 
 import '../../app/environment.dart';
 import '../dependency_factories/repository_factory.dart';
@@ -48,5 +49,9 @@ class DependencyGraph {
 
   DealsRepository getDealsRepository() {
     return _repositoryFactory.createDealsRepository();
+  }
+
+  StoresRepository getStoresRepository() {
+    return _repositoryFactory.createStoresRepository();
   }
 }

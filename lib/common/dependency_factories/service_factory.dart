@@ -1,4 +1,5 @@
 import 'package:flutteronimo/common/services/deals_service.dart';
+import 'package:flutteronimo/common/services/stores_service.dart';
 
 import '../../app/environment.dart';
 import '../repositories/storage_and_settings/shared_preferences_storage.dart';
@@ -21,4 +22,8 @@ class ServiceFactory {
   DealsService createDeals() => DealsService(
         httpService: httpService,
       );
+
+  StoresService createStoresService() => StoresService(
+    httpService: httpService,
+  );
 }

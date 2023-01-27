@@ -1,5 +1,6 @@
 enum SharedPreferenceKey {
-  preferredLanguage
+  preferredLanguage,
+  storages,
 }
 
 extension RawValue on SharedPreferenceKey {
@@ -8,6 +9,8 @@ extension RawValue on SharedPreferenceKey {
     switch(this) {
       case SharedPreferenceKey.preferredLanguage:
         return "preferredLanguage";
+      case SharedPreferenceKey.storages:
+        return "storages";
     }
   }
 }

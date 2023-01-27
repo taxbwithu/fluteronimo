@@ -12,7 +12,7 @@ class StoresService {
     required this.httpService,
   });
 
-  Future<List<StoreData>?> readDealList() async {
+  Future<List<StoreData>> readStoreList() async {
     final response = await httpService.get<String>(path: _storePath);
     List<dynamic> decodedResponse = ServiceUtil.decodeListResponse(response);
     return decodedResponse.map((e) => StoreData.fromJson(e)).toList();
