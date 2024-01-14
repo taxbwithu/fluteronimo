@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../common/repositories/dependency_graph.dart';
 import '../common/widgets/multi_locale_controller/multi_locale_controller.dart';
+import 'package:sqflite/sqflite.dart';
 
 class MyApp extends StatelessWidget {
   DependencyGraph dependencyGraph;

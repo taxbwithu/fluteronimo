@@ -10,6 +10,7 @@
 //
 // ignore_for_file: type=lint
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
 
@@ -24,28 +25,43 @@ class AppRouter extends _i3.RootStackRouter {
   final Map<String, _i3.PageFactory> pagesMap = {
     HomeScreenRoute.name: (routeData) {
       return _i3.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.HomeScreen());
+        routeData: routeData,
+        child: const _i1.HomeScreen(),
+      );
     },
     DealDetailsScreenRoute.name: (routeData) {
       final args = routeData.argsAs<DealDetailsScreenRouteArgs>();
       return _i3.MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: _i2.DealDetailsScreen(dealId: args.dealId, key: args.key));
-    }
+        routeData: routeData,
+        child: _i2.DealDetailsScreen(
+          dealId: args.dealId,
+          key: args.key,
+        ),
+      );
+    },
   };
 
   @override
   List<_i3.RouteConfig> get routes => [
-        _i3.RouteConfig(HomeScreenRoute.name, path: '/'),
-        _i3.RouteConfig(DealDetailsScreenRoute.name,
-            path: '/deal-details-screen')
+        _i3.RouteConfig(
+          HomeScreenRoute.name,
+          path: '/',
+        ),
+        _i3.RouteConfig(
+          DealDetailsScreenRoute.name,
+          path: '/deal-details-screen',
+        ),
       ];
 }
 
 /// generated route for
 /// [_i1.HomeScreen]
 class HomeScreenRoute extends _i3.PageRouteInfo<void> {
-  const HomeScreenRoute() : super(HomeScreenRoute.name, path: '/');
+  const HomeScreenRoute()
+      : super(
+          HomeScreenRoute.name,
+          path: '/',
+        );
 
   static const String name = 'HomeScreenRoute';
 }
@@ -54,16 +70,26 @@ class HomeScreenRoute extends _i3.PageRouteInfo<void> {
 /// [_i2.DealDetailsScreen]
 class DealDetailsScreenRoute
     extends _i3.PageRouteInfo<DealDetailsScreenRouteArgs> {
-  DealDetailsScreenRoute({required String dealId, _i4.Key? key})
-      : super(DealDetailsScreenRoute.name,
-            path: '/deal-details-screen',
-            args: DealDetailsScreenRouteArgs(dealId: dealId, key: key));
+  DealDetailsScreenRoute({
+    required String dealId,
+    _i4.Key? key,
+  }) : super(
+          DealDetailsScreenRoute.name,
+          path: '/deal-details-screen',
+          args: DealDetailsScreenRouteArgs(
+            dealId: dealId,
+            key: key,
+          ),
+        );
 
   static const String name = 'DealDetailsScreenRoute';
 }
 
 class DealDetailsScreenRouteArgs {
-  const DealDetailsScreenRouteArgs({required this.dealId, this.key});
+  const DealDetailsScreenRouteArgs({
+    required this.dealId,
+    this.key,
+  });
 
   final String dealId;
 
