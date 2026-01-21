@@ -25,6 +25,7 @@ class _DealDetailsCardState extends State<DealDetailsCard> {
         children: [
           const SizedBox(height: 16.0),
           _buildGameDetails(),
+          //_buildWishlistComponent()
         ],
       ),
     );
