@@ -17,7 +17,7 @@ class BaseService {
 
     if (dioError is RevokeTokenException) {
       throw dioError;
-    } else if (dioError.type == DioErrorType.connectTimeout) {
+    } else if (dioError.type == DioExceptionType.connectionTimeout) {
       throw ConnectionTimeoutException();
     }
 

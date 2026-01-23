@@ -30,6 +30,11 @@
 .pub-cache/
 .pub/
 /build/
+android/app/google-services.json
+firebase.json
+/lib/firebase_options.dart
+**/*.g.dart
+**/*.freezed.dart
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -44,3 +49,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# FVM Version Cache
+.fvm/
+android/build/reports/problems/problems-report.html
+.fvmrc

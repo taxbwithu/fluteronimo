@@ -8,3 +8,8 @@ class UpdateState extends WishlistStates {
   final List<DealItem> dealList;
   UpdateState(this.dealList);
 }
+
+class WishlistErrorState extends WishlistStates {
+  final String message;
+  WishlistErrorState(this.message);
+}

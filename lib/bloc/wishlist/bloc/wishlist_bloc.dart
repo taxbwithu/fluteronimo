@@ -13,12 +13,12 @@ class WishlistBloc extends Bloc<WishlistEvents, WishlistStates> {
   void onWishlistLoad(
       WishlistLoadEvent event, Emitter<WishlistStates> emit) async {
     counter = counter + 1;
-    emit(UpdateState(counter));
+    emit(UpdateState([]));
   }
 
   void onWishlistClick(
       WishlistClickEvent event, Emitter<WishlistStates> emit) async {
     counter = counter - 1;
-    emit(UpdateState(counter));
+    emit(UpdateState([]));
   }
 }

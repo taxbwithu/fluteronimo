@@ -7,17 +7,17 @@ class AppCoordinator {
     required BuildContext context,
     T? result,
   }) {
-    context.router.pop(result);
+    context.router.maybePop(result);
   }
 
   navigateHome({
     required BuildContext context,
   }) {
-    context.router.replaceAll([const HomeScreenRoute()]);
+    context.router.replaceAll([const DealsRoute()]);
   }
 
   navigateToDealDetails(
       {required BuildContext context, required String dealId}) {
-    context.router.push(DealDetailsScreenRoute(dealId: dealId));
+    context.router.push(DealDetailsRoute(dealId: dealId));
   }
 }

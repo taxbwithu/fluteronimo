@@ -6,13 +6,13 @@ import 'package:flutteronimo/common/repositories/stores/stores_repository.dart';
 import 'package:flutteronimo/common/utils/rx/rx_extensions.dart';
 import 'package:rxdart/rxdart.dart';
 
-class HomeVm {
+class DealsVm {
   final DealsRepository dealsRepository;
   final StoresRepository storesRepository;
   final screenContentSubject = BehaviorSubject<List<DealItem>?>.seeded(null);
   final _appCoordinator = AppCoordinator();
 
-  HomeVm({
+  DealsVm({
     required this.dealsRepository,
     required this.storesRepository,
   });

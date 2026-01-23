@@ -1,12 +1,21 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutteronimo/feature/home/view/home_screen.dart';
+import 'package:flutteronimo/common/app_router/app_router.gr.dart';
 
-import '../../feature/deal_details/view/deal_details_screen.dart';
+@AutoRouterConfig(replaceInRouteName: 'Screen|Page,Route')
+class AppRouter extends RootStackRouter {
+  @override
+  RouteType get defaultRouteType => const RouteType.material();
 
-@MaterialAutoRouter(
-    replaceInRouteName: "Page,Route,Screen",
-    routes: <AutoRoute>[
-      AutoRoute(page: HomeScreen, initial: true),
-      AutoRoute(page: DealDetailsScreen),
-    ])
-class $AppRouter {}
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(
+          page: HomeRoute.page,
+          initial: true,
+          children: [
+            AutoRoute(page: DealsRoute.page),
+            AutoRoute(page: WishlistRoute.page),
+          ],
+        ),
+        AutoRoute(page: DealDetailsRoute.page),
+      ];
+}

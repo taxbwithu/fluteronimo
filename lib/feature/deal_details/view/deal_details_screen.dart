@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
 import 'package:flutteronimo/common/repositories/dependency_graph.dart';
@@ -13,6 +14,7 @@ import '../../../common/theme/app_decorator.dart';
 import '../../../common/widgets/navigation_bar/app_navigation_bar.dart';
 import '../widget/deal_details_card.dart';
 
+@RoutePage()
 class DealDetailsScreen extends StatefulWidget {
   final String dealId;
 
