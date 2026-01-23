@@ -131,23 +131,7 @@ class DioHttpService extends HttpService {
         data: formData,
         options: Options(contentType: "multipart/form-data"),
       );
-    } on DioError catch (dioError) {
-      //TODO MM 02.03.2022 delete below closure when bug will be resolved (in Dio library)
-      // Still not fixed.
-      // https://github.com/flutterchina/dio/issues/482
-      if (dioError.type == DioErrorType.other &&
-          dioError.message.toLowerCase().contains(
-              'Can\'t finalize a finalized MultipartFile'.toLowerCase())) {
-        try {
-          return await _dio.post(
-            _buildPath(path: path, apiVersion: apiVersion),
-            data: formData,
-            options: Options(contentType: "multipart/form-data"),
-          );
-        } catch (object) {
-          throw MultipartFileException(message: dioError.message);
-        }
-      }
+    } on DioException catch (dioError) {
 
       throw await parseDioError(dioError);
     }
@@ -168,23 +152,23 @@ class DioHttpService extends HttpService {
     }
   }
 
-  int _getConnectTimeout() {
+  Duration _getConnectTimeout() {
     switch (environment) {
       case Environment.dev:
       case Environment.qa:
-        return 5000;
+        return const Duration(milliseconds: 5000);
       default:
-        return 60000;
+        return const Duration(milliseconds: 60000);
     }
   }
 
-  int _getReceiveTimeout() {
+  Duration _getReceiveTimeout() {
     switch (environment) {
       case Environment.dev:
       case Environment.qa:
-        return 3000;
+        return const Duration(milliseconds: 3000);
       default:
-        return 45000;
+        return const Duration(milliseconds: 45000);
     }
   }
 

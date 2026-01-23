@@ -4,8 +4,8 @@ class AppTextStyle {
   static TextStyle title() {
     return const TextStyle(
       fontSize: 24.0,
-      fontFamily: "Roboto",
-      fontWeight: FontWeight.w500,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     );
   }
@@ -13,7 +13,7 @@ class AppTextStyle {
   static TextStyle body() {
     return const TextStyle(
       fontSize: 17.0,
-      fontFamily: "Roboto",
+      fontFamily: "Inter",
       fontWeight: FontWeight.normal,
       color: Colors.white,
     );
@@ -22,7 +22,7 @@ class AppTextStyle {
   static TextStyle bold() {
     return const TextStyle(
       fontSize: 17.0,
-      fontFamily: "Roboto",
+      fontFamily: "Inter",
       fontWeight: FontWeight.bold,
       color: Colors.white,
     );
@@ -31,10 +31,11 @@ class AppTextStyle {
   static TextStyle italic() {
     return const TextStyle(
       fontSize: 17.0,
-      fontFamily: "Roboto",
+      fontFamily: "Inter",
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.normal,
       color: Colors.white,
+      height: 1.2,
     );
   }
 }

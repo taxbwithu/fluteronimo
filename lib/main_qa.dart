@@ -6,9 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutteronimo/app/app.dart';
 import 'package:flutteronimo/app/environment.dart';
 
+import 'firebase_options.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   final app = MyApp(
     environment: Environment.qa

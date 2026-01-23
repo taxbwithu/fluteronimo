@@ -22,6 +22,7 @@ class DependencyGraph {
       SystemSecureStorage(storage: _flutterSecureStorage);
   final _sharedPreferencesStorage = SharedPreferencesStorage();
 
+
   DependencyGraph({
     required this.environment,
   }) {
