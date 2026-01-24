@@ -4,8 +4,6 @@ import 'package:flutteronimo/common/data_models/deal_item/deal_item.dart';
 import 'package:flutteronimo/common/factories/components_factory.dart';
 import 'package:flutteronimo/common/repositories/dependency_graph.dart';
 import 'package:flutteronimo/common/theme/app_decorator.dart';
-import 'package:flutteronimo/common/widgets/drawer/custom_drawer.dart';
-import 'package:flutteronimo/common/widgets/drawer/data_model/drawer_item.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
 import 'package:flutteronimo/feature/home/subscreens/deals/vm/deals_vm.dart';
 import 'package:flutteronimo/feature/home/subscreens/deals/widgets/deal_card.dart';
@@ -48,9 +46,6 @@ class _DealsScreenState extends State<DealsScreen> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: ColorName.safeAreaDark,
-      drawer: const CustomDrawer(
-        currentItem: DrawerItem.home,
-      ),
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -60,7 +55,7 @@ class _DealsScreenState extends State<DealsScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               AppNavigationBar(
-                screenTitle: Texts.current.home_screen_message,
+                screenTitle: Texts.current.deals_screen_message,
                 leadingButton: ComponentsFactory.createNavBarDrawerButton(),
                 onLeadingTap: () =>
                     (_scaffoldKey.currentState as ScaffoldState).openDrawer(),

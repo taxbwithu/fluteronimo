@@ -18,9 +18,11 @@ class $AssetsImagesGen {
   AssetGenImage get backArrow =>
       const AssetGenImage('assets/images/back_arrow.png');
 
-  /// File path: assets/images/home_icon.png
-  AssetGenImage get homeIcon =>
-      const AssetGenImage('assets/images/home_icon.png');
+  /// File path: assets/images/heart_icon.svg
+  String get heartIcon => 'assets/images/heart_icon.svg';
+
+  /// File path: assets/images/house_icon.svg
+  String get houseIcon => 'assets/images/house_icon.svg';
 
   /// File path: assets/images/logout_icon.png
   AssetGenImage get logoutIcon =>
@@ -34,9 +36,19 @@ class $AssetsImagesGen {
   AssetGenImage get settingsIcon =>
       const AssetGenImage('assets/images/settings_icon.png');
 
+  /// File path: assets/images/user_icon.svg
+  String get userIcon => 'assets/images/user_icon.svg';
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [backArrow, homeIcon, logoutIcon, menuIcon, settingsIcon];
+  List<dynamic> get values => [
+        backArrow,
+        heartIcon,
+        houseIcon,
+        logoutIcon,
+        menuIcon,
+        settingsIcon,
+        userIcon
+      ];
 }
 
 class Assets {

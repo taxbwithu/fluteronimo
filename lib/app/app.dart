@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutteronimo/app/environment.dart';
 import 'package:flutteronimo/common/app_router/app_router.dart';
@@ -47,6 +48,13 @@ class MyApp extends StatelessWidget {
     required BuildContext context,
   }) {
     const localization = AppLocalizationDelegate();
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent, // IMPORTANT
+        statusBarIconBrightness: Brightness.light, // ANDROID icons (white)
+        statusBarBrightness: Brightness.dark, // iOS icons (white)
+      ),
+    );
     return MaterialApp.router(
       title: "Flutter Experiment Field",
       supportedLocales: localization.supportedLocales,
