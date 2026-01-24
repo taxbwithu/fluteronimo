@@ -25,9 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "common_no_data_separator": MessageLookupByLibrary.simpleMessage("--"),
         "deal_details_screen_label":
             MessageLookupByLibrary.simpleMessage("Details"),
+        "deals_screen_message": MessageLookupByLibrary.simpleMessage("Deals"),
         "error_view_default_message": MessageLookupByLibrary.simpleMessage(
             "Something went wrong, please try again."),
-        "home_screen_message": MessageLookupByLibrary.simpleMessage("Deals"),
-        "logout_drawer_label": MessageLookupByLibrary.simpleMessage("Logout")
+        "profile_screen_message":
+            MessageLookupByLibrary.simpleMessage("Profile"),
+        "wishlist_screen_message":
+            MessageLookupByLibrary.simpleMessage("Wishlist")
       };
 }

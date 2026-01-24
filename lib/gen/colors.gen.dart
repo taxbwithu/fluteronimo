@@ -14,9 +14,15 @@ import 'package:flutter/material.dart';
 class ColorName {
   ColorName._();
 
+  /// Color: #00B9FF
+  static const Color electricBlue = Color(0xFF00B9FF);
+
   /// Color: #0a0a0a
   static const Color primaryDark = Color(0xFF0A0A0A);
 
   /// Color: #090909
   static const Color safeAreaDark = Color(0xFF090909);
+
+  /// Color: #FFFFFF
+  static const Color white = Color(0xFFFFFFFF);
 }

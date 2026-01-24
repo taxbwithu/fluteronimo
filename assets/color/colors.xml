@@ -2,4 +2,6 @@
 <resources>
     <color name="primaryDark">#0a0a0a</color>
     <color name="safeAreaDark">#090909</color>
+    <color name="electricBlue">#00B9FF</color>
+    <color name="white">#FFFFFF</color>
 </resources>

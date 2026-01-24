@@ -71,20 +71,30 @@ class Texts {
   }
 
   /// `Deals`
-  String get home_screen_message {
+  String get deals_screen_message {
     return Intl.message(
       'Deals',
-      name: 'home_screen_message',
+      name: 'deals_screen_message',
       desc: '',
       args: [],
     );
   }
 
-  /// `Logout`
-  String get logout_drawer_label {
+  /// `Wishlist`
+  String get wishlist_screen_message {
     return Intl.message(
-      'Logout',
-      name: 'logout_drawer_label',
+      'Wishlist',
+      name: 'wishlist_screen_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile_screen_message {
+    return Intl.message(
+      'Profile',
+      name: 'profile_screen_message',
       desc: '',
       args: [],
     );

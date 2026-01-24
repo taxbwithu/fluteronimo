@@ -2,9 +2,9 @@
   "@@locale": "en_GB",
   "error_view_default_message": "Something went wrong, please try again.",
   "common_no_data_separator": "--",
-  "home_screen_message": "Deals",
-
-  "logout_drawer_label": "Logout",
+  "deals_screen_message": "Deals",
+  "wishlist_screen_message": "Wishlist",
+  "profile_screen_message": "Profile",
 
   "deal_details_screen_label": "Details"
 }

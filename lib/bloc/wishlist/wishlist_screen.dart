@@ -4,8 +4,6 @@ import 'package:flutteronimo/bloc/wishlist/bloc/wishlist_bloc.dart';
 import 'package:flutteronimo/bloc/wishlist/bloc/wishlist_event.dart';
 import 'package:flutteronimo/common/factories/components_factory.dart';
 import 'package:flutteronimo/common/theme/app_decorator.dart';
-import 'package:flutteronimo/common/widgets/drawer/custom_drawer.dart';
-import 'package:flutteronimo/common/widgets/drawer/data_model/drawer_item.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
 import 'package:flutteronimo/feature/home/subscreens/deals/widgets/deal_card.dart';
 import 'package:flutteronimo/gen/colors.gen.dart';
@@ -34,9 +32,6 @@ class WishlistView extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: ColorName.safeAreaDark,
-      drawer: const CustomDrawer(
-        currentItem: DrawerItem.home,
-      ),
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -46,7 +41,7 @@ class WishlistView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               AppNavigationBar(
-                screenTitle: Texts.current.home_screen_message,
+                screenTitle: Texts.current.wishlist_screen_message,
                 leadingButton: ComponentsFactory.createNavBarDrawerButton(),
                 onLeadingTap: () =>
                     (_scaffoldKey.currentState as ScaffoldState).openDrawer(),

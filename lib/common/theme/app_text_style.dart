@@ -38,4 +38,26 @@ class AppTextStyle {
       height: 1.2,
     );
   }
+
+  static TextStyle caption3() {
+    return const TextStyle(
+      fontSize: 11.0,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w500,
+      color: Colors.white,
+      letterSpacing: 0.2,
+    );
+  }
+
+  static TextStyle caption3Bold({
+    Color? color,
+  }) {
+    return TextStyle(
+      fontSize: 11.0,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w700,
+      color: color ?? Colors.white,
+      letterSpacing: 0.2,
+    );
+  }
 }
