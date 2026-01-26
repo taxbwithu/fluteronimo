@@ -9,23 +9,25 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:flutter/material.dart' as _i7;
 import 'package:flutteronimo/feature/deal_details/view/deal_details_screen.dart'
     as _i1;
 import 'package:flutteronimo/feature/home/subscreens/deals/view/deals_screen.dart'
     as _i2;
-import 'package:flutteronimo/feature/home/subscreens/wishlist/view/wishlist_screen.dart'
+import 'package:flutteronimo/feature/home/subscreens/profile/view/profile_screen.dart'
     as _i4;
+import 'package:flutteronimo/feature/home/subscreens/wishlist/view/wishlist_screen.dart'
+    as _i5;
 import 'package:flutteronimo/feature/home/view/home_screen.dart' as _i3;
 
 /// generated route for
 /// [_i1.DealDetailsScreen]
-class DealDetailsRoute extends _i5.PageRouteInfo<DealDetailsRouteArgs> {
+class DealDetailsRoute extends _i6.PageRouteInfo<DealDetailsRouteArgs> {
   DealDetailsRoute({
     required String dealId,
-    _i6.Key? key,
-    List<_i5.PageRouteInfo>? children,
+    _i7.Key? key,
+    List<_i6.PageRouteInfo>? children,
   }) : super(
          DealDetailsRoute.name,
          args: DealDetailsRouteArgs(dealId: dealId, key: key),
@@ -34,7 +36,7 @@ class DealDetailsRoute extends _i5.PageRouteInfo<DealDetailsRouteArgs> {
 
   static const String name = 'DealDetailsRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<DealDetailsRouteArgs>();
@@ -48,7 +50,7 @@ class DealDetailsRouteArgs {
 
   final String dealId;
 
-  final _i6.Key? key;
+  final _i7.Key? key;
 
   @override
   String toString() {
@@ -58,13 +60,13 @@ class DealDetailsRouteArgs {
 
 /// generated route for
 /// [_i2.DealsScreen]
-class DealsRoute extends _i5.PageRouteInfo<void> {
-  const DealsRoute({List<_i5.PageRouteInfo>? children})
+class DealsRoute extends _i6.PageRouteInfo<void> {
+  const DealsRoute({List<_i6.PageRouteInfo>? children})
     : super(DealsRoute.name, initialChildren: children);
 
   static const String name = 'DealsRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       return const _i2.DealsScreen();
@@ -74,13 +76,13 @@ class DealsRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.HomeScreen]
-class HomeRoute extends _i5.PageRouteInfo<void> {
-  const HomeRoute({List<_i5.PageRouteInfo>? children})
+class HomeRoute extends _i6.PageRouteInfo<void> {
+  const HomeRoute({List<_i6.PageRouteInfo>? children})
     : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       return const _i3.HomeScreen();
@@ -89,17 +91,33 @@ class HomeRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.WishlistScreen]
-class WishlistRoute extends _i5.PageRouteInfo<void> {
-  const WishlistRoute({List<_i5.PageRouteInfo>? children})
+/// [_i4.ProfileScreen]
+class ProfileRoute extends _i6.PageRouteInfo<void> {
+  const ProfileRoute({List<_i6.PageRouteInfo>? children})
+    : super(ProfileRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.ProfileScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i5.WishlistScreen]
+class WishlistRoute extends _i6.PageRouteInfo<void> {
+  const WishlistRoute({List<_i6.PageRouteInfo>? children})
     : super(WishlistRoute.name, initialChildren: children);
 
   static const String name = 'WishlistRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i4.WishlistScreen();
+      return const _i5.WishlistScreen();
     },
   );
 }
