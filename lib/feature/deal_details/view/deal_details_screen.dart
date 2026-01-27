@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
 import 'package:flutteronimo/common/repositories/dependency_graph.dart';
-import 'package:flutteronimo/common/theme/app_text_style.dart';
 import 'package:flutteronimo/feature/deal_details/vm/deal_details_vm.dart';
 import 'package:flutteronimo/gen/colors.gen.dart';
 import 'package:flutteronimo/generated/l10n.dart';
