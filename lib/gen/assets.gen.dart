@@ -29,6 +29,9 @@ class $AssetsImagesGen {
   AssetGenImage get backArrow =>
       const AssetGenImage('assets/images/back_arrow.png');
 
+  /// File path: assets/images/gamepad_icon.svg
+  String get gamepadIcon => 'assets/images/gamepad_icon.svg';
+
   /// File path: assets/images/heart_icon.svg
   String get heartIcon => 'assets/images/heart_icon.svg';
 
@@ -56,6 +59,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
         backArrow,
+        gamepadIcon,
         heartIcon,
         houseIcon,
         logoIcon,

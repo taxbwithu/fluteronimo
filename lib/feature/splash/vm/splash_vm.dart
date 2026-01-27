@@ -1,9 +1,10 @@
 import 'package:flutteronimo/common/repositories/user/user_repository.dart';
 import 'package:flutteronimo/common/utils/logger/logger.dart';
-import 'package:flutteronimo/common/utils/rx/stateful_subject.dart';
+import 'package:flutteronimo/common/utils/rx/rx_extensions.dart';
+import 'package:rxdart/rxdart.dart';
 
 class SplashVm {
-  final userLoggedInSubject = StatefulSubject<bool?>(value: null);
+  final userLoggedInSubject = PublishSubject<bool?>();
 
   final UserRepository userRepository;
 
@@ -16,13 +17,13 @@ class SplashVm {
   Future<void> _loadInitialData() async {
     try {
       final isUserLoggedIn = await userRepository.isUserLoggedIn();
-      userLoggedInSubject.push(isUserLoggedIn);
+      userLoggedInSubject.addSafe(isUserLoggedIn);
     } catch (object) {
       Logger().error(object.toString());
     }
   }
 
   void dispose() {
-    userLoggedInSubject.dispose();
+    userLoggedInSubject.close();
   }
 }

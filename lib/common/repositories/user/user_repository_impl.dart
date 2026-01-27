@@ -17,6 +17,6 @@ class UserRepositoryImpl extends UserRepository {
 
   @override
   Future<bool> isUserLoggedIn() async {
-    return true;
+    return false;
   }
 }

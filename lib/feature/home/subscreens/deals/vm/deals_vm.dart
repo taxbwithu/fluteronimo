@@ -4,9 +4,10 @@ import 'package:flutteronimo/common/data_models/deal_item/deal_item.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/repositories/stores/stores_repository.dart';
 import 'package:flutteronimo/common/utils/rx/rx_extensions.dart';
+import 'package:flutteronimo/common/widgets/base_screen/base_vm.dart';
 import 'package:rxdart/rxdart.dart';
 
-class DealsVm {
+class DealsVm extends BaseVm {
   final DealsRepository dealsRepository;
   final StoresRepository storesRepository;
   final screenContentSubject = BehaviorSubject<List<DealItem>?>.seeded(null);
@@ -18,15 +19,12 @@ class DealsVm {
   });
 
   Future loadScreenData() async {
-    try {
+    await runSafe(() async {
       final result = await dealsRepository.readDealList();
       await storesRepository.saveStoreList();
       print("done");
       screenContentSubject.addSafe(result);
-    } catch (object) {
-      // TODO replace with error handling
-      print(object);
-    }
+    });
   }
 
   void dispose() {

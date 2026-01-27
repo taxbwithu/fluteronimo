@@ -1,20 +1,49 @@
+import 'package:flutteronimo/common/data_models/deal_item/ws/deal_item_ws.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'deal_item.freezed.dart';
-
-part 'deal_item.g.dart';
-
 @freezed
-class DealItem with _$DealItem {
-  const factory DealItem({
-    required String dealID,
-    required String title,
-    required String salePrice,
-    required String normalPrice,
-    required String dealRating,
-    required String thumb,
-  }) = _DealItem;
+class DealItem {
+  final String dealID;
+  final String title;
+  final String salePrice;
+  final String normalPrice;
+  final String? steamAppID;
+  final String dealRating;
+  final String thumbnail;
+  final String fullThumbnail;
 
-  factory DealItem.fromJson(Map<String, Object?> json) =>
-      _$DealItemFromJson(json);
+  DealItem({
+    required this.dealID,
+    required this.title,
+    required this.salePrice,
+    required this.normalPrice,
+    required this.steamAppID,
+    required this.dealRating,
+    required this.thumbnail,
+    required this.fullThumbnail,
+  });
+
+  factory DealItem.fromWsData(DealItemWs wsData) {
+    return DealItem(
+      dealID: wsData.dealID,
+      title: wsData.title,
+      salePrice: wsData.salePrice,
+      normalPrice: wsData.normalPrice,
+      steamAppID: wsData.steamAppID,
+      dealRating: wsData.dealRating,
+      thumbnail: wsData.thumb,
+      fullThumbnail: toSteamHeader(
+        steamAppID: wsData.steamAppID,
+        thumb: wsData.thumb,
+      ),
+    );
+  }
+
+  static String toSteamHeader({
+    required String? steamAppID,
+    required String thumb,
+  }) {
+    if (steamAppID == null) return thumb;
+    return 'https://cdn.cloudflare.steamstatic.com/steam/apps/$steamAppID/library_600x900.jpg';
+  }
 }

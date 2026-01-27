@@ -77,11 +77,20 @@ class _DealCardState extends State<DealCard> {
 
   Widget _buildThumbnail() {
     return Image.network(
-      widget.dealItem.thumb,
+      widget.dealItem.fullThumbnail,
       height: LayoutSettings.defaultItemHeight,
       width: 150,
       fit: BoxFit.fitWidth,
       alignment: Alignment.center,
+      errorBuilder: (context, error, stackTrace) {
+        return Image.network(
+          widget.dealItem.thumbnail,
+          height: LayoutSettings.defaultItemHeight,
+          width: 150,
+          fit: BoxFit.fitWidth,
+          alignment: Alignment.center,
+        );
+      },
     );
   }
 

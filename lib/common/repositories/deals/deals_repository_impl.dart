@@ -5,17 +5,18 @@ import 'package:flutteronimo/common/utils/extensions/iterable_extensions.dart';
 import '../../data_models/deal_item/deal_item.dart';
 import '../../services/deals_service.dart';
 
-class StubDealsRepository extends DealsRepository {
+class DealsRepositoryImpl extends DealsRepository {
   final DealsService service;
 
-  StubDealsRepository({
+  DealsRepositoryImpl({
     required this.service,
   });
 
   //TODO replace with pagination
   @override
   Future<List<DealItem>?> readDealList() async {
-    final items = await service.readDealList();
+    final itemsWs = await service.readDealList();
+    final items = itemsWs?.map((e) => DealItem.fromWsData(e)).toList();
     return filterByTitle(dealItems: items);
   }
 

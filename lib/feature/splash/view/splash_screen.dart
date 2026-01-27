@@ -35,6 +35,12 @@ class _SplashScreenState extends State<SplashScreen> with SplashScreenNavigation
       userRepository: dependencyGraph.getUserRepository(),
     );
     _bindListeners();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(
+        AssetImage(Assets.animations.loading.path),
+        context,
+      );
+    });
     super.initState();
   }
 

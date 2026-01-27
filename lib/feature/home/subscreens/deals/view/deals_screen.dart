@@ -4,6 +4,7 @@ import 'package:flutteronimo/common/data_models/deal_item/deal_item.dart';
 import 'package:flutteronimo/common/factories/components_factory.dart';
 import 'package:flutteronimo/common/repositories/dependency_graph.dart';
 import 'package:flutteronimo/common/theme/app_decorator.dart';
+import 'package:flutteronimo/common/widgets/base_screen/base_screen.dart';
 import 'package:flutteronimo/common/widgets/navigation_bar/app_navigation_bar.dart';
 import 'package:flutteronimo/feature/home/subscreens/deals/view/deals_screen_navigation.dart';
 import 'package:flutteronimo/feature/home/subscreens/deals/vm/deals_vm.dart';
@@ -22,7 +23,6 @@ class DealsScreen extends StatefulWidget {
 
 class _DealsScreenState extends State<DealsScreen> with DealsScreenNavigation {
   late DealsVm _viewModel;
-  final GlobalKey _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -46,10 +46,8 @@ class _DealsScreenState extends State<DealsScreen> with DealsScreenNavigation {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      backgroundColor: ColorName.safeAreaDark,
-      body: SafeArea(
+    return BaseScreen(
+        vm: _viewModel,
         child: Container(
           width: double.infinity,
           height: double.infinity,
@@ -59,16 +57,13 @@ class _DealsScreenState extends State<DealsScreen> with DealsScreenNavigation {
             children: [
               AppNavigationBar(
                 screenTitle: Texts.current.deals_screen_message,
-                leadingButton: ComponentsFactory.createNavBarDrawerButton(),
-                onLeadingTap: () =>
-                    (_scaffoldKey.currentState as ScaffoldState).openDrawer(),
+                onLeadingTap: () => {},
               ),
               Expanded(child: _buildGameList()),
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildGameList() {

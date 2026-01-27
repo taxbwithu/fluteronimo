@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutteronimo/feature/login/view/login_screen_navigation.dart';
 import 'package:flutteronimo/feature/login/widgets/auth_button.dart';
+import 'package:flutteronimo/gen/assets.gen.dart';
+import 'package:flutteronimo/gen/colors.gen.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
@@ -10,7 +14,7 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> with LoginScreenNavigation {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,19 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: [
               const Spacer(flex: 2),
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.08),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: const Icon(
-                  Icons.sports_esports,
-                  color: Colors.white,
-                  size: 32,
-                ),
-              ),
+              _buildPageIcon(),
               const SizedBox(height: 32),
               const Text(
                 'Game Buddy',
@@ -61,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.black,
                   size: 22,
                 ),
-                onTap: () {},
+                onTap: () => openHomeScreen(context: context),
               ),
               const SizedBox(height: 16),
               AuthButton(
@@ -86,6 +78,20 @@ class _LoginScreenState extends State<LoginScreen> {
               const Spacer(flex: 2),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPageIcon() {
+    return SizedBox(
+      height: 40,
+      width: 40,
+      child: SvgPicture.asset(
+        Assets.images.gamepadIcon,
+        colorFilter: const ColorFilter.mode(
+          ColorName.white,
+          BlendMode.srcIn,
         ),
       ),
     );
