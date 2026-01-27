@@ -3,6 +3,8 @@ import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/repositories/deals/stub_deals_repository.dart';
 import 'package:flutteronimo/common/repositories/stores/stores_repository.dart';
 import 'package:flutteronimo/common/repositories/stores/stub_stores_repository.dart';
+import 'package:flutteronimo/common/repositories/user/user_repository.dart';
+import 'package:flutteronimo/common/repositories/user/user_repository_impl.dart';
 
 import '../../app/environment.dart';
 import '../repositories/multilocale/multilocale_repository.dart';
@@ -49,6 +51,12 @@ class RepositoryFactory {
     return StubStoresRepository(
       service: _serviceFactory.createStoresService(),
       storage: sharedPreferencesStorage,
+    );
+  }
+
+  UserRepository createUserRepository() {
+    return UserRepositoryImpl(
+      secureStorage: secureStorage,
     );
   }
 }

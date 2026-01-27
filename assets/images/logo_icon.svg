@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="512" height="512" fill="#223B49"/>
+
+    <!-- Long Shadow -->
+    <path d="M344 198L512 366V512H358L220 372L344 198Z" fill="#1A2E39" fill-opacity="0.5"/>
+
+    <!-- Controller Body Shadow (Bottom highlight) -->
+    <path d="M185 435C165 435 160 410 160 380C160 260 180 200 256 200C332 200 352 260 352 380C352 410 347 435 327 435C300 435 290 385 256 385C222 385 212 435 185 435Z" fill="#E0E0E0"/>
+
+    <!-- Controller Top Buttons (Triggers) -->
+    <rect x="185" y="185" width="40" height="30" rx="10" fill="#5CC19D"/>
+    <rect x="287" y="185" width="40" height="30" rx="10" fill="#5CC19D"/>
+
+    <!-- Main Controller Body -->
+    <path d="M185 430C160 430 155 405 155 375C155 255 175 195 256 195C337 195 357 255 357 375C357 405 352 430 327 430C300 430 290 380 256 380C222 380 212 430 185 430Z" fill="#F5F5F5"/>
+
+    <!-- D-Pad -->
+    <g fill="#2C3E50">
+        <rect x="202" y="275" width="10" height="30" rx="2"/>
+        <rect x="192" y="285" width="30" height="10" rx="2"/>
+    </g>
+
+    <!-- Checkmark Button -->
+    <circle cx="305" cy="290" r="24" fill="#5CC19D"/>
+    <path d="M295 290L302 297L315 283" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

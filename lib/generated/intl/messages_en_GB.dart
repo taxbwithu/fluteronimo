@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Something went wrong, please try again."),
         "profile_screen_message":
             MessageLookupByLibrary.simpleMessage("Profile"),
+        "splash_screen_loading_label":
+            MessageLookupByLibrary.simpleMessage("Loading..."),
         "wishlist_screen_message":
             MessageLookupByLibrary.simpleMessage("Wishlist")
       };

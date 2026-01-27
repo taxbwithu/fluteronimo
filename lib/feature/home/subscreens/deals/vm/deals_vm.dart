@@ -29,13 +29,6 @@ class DealsVm {
     }
   }
 
-  void openDealDetails({
-    required BuildContext context,
-    required String dealId,
-  }) {
-    _appCoordinator.navigateToDealDetails(context: context, dealId: dealId);
-  }
-
   void dispose() {
     screenContentSubject.close();
   }

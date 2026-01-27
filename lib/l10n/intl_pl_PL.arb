@@ -6,5 +6,7 @@
 
   "logout_drawer_label": "Wyloguj się",
 
-  "deal_details_screen_label": "Detale"
+  "deal_details_screen_label": "Detale",
+
+  "splash_screen_loading_label": "Ładowanie..."
 }

@@ -23,6 +23,12 @@ class AppCoordinator {
     context.router.push(DealDetailsRoute(dealId: dealId));
   }
 
+  navigateToLogin({
+    required BuildContext context,
+  }) {
+    context.router.push(const LoginRoute());
+  }
+
   logout({
     required BuildContext context,
   }) {
