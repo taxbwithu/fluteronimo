@@ -22,4 +22,10 @@ Done by running command:
  - [freezed](https://pub.dev/packages/freezed) - Generates data classes
  - [flutter_bloc](https://pub.dev/packages/flutter_bloc) - Widgets that make it easy to integrate blocs and cubits into Flutter.
  - Currently replaced with Hive - [sqflite](https://pub.dev/packages/sqflite) - SQLite database for Flutter. (for storing data locally)
- - [sqflite](https://pub.dev/packages/sqflite) - SQLite database for Flutter. (for storing data locally)
+
+
+
+### Discontinued Dependencies
+ - [lottie](https://pub.dev/packages/lottie) - Quality of animation was pretty bad, decided to move to gif.
+ - [dotlottie_loader](https://pub.dev/packages/dotlottie_loader) - Package allowing use of dotLottie format.
+

@@ -109,6 +109,16 @@ class Texts {
       args: [],
     );
   }
+
+  /// `Loading...`
+  String get splash_screen_loading_label {
+    return Intl.message(
+      'Loading...',
+      name: 'splash_screen_loading_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Texts> {

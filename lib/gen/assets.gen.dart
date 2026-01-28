@@ -11,6 +11,17 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsAnimationsGen {
+  const $AssetsAnimationsGen();
+
+  /// File path: assets/animations/loading.gif
+  AssetGenImage get loading =>
+      const AssetGenImage('assets/animations/loading.gif');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [loading];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -18,11 +29,17 @@ class $AssetsImagesGen {
   AssetGenImage get backArrow =>
       const AssetGenImage('assets/images/back_arrow.png');
 
+  /// File path: assets/images/gamepad_icon.svg
+  String get gamepadIcon => 'assets/images/gamepad_icon.svg';
+
   /// File path: assets/images/heart_icon.svg
   String get heartIcon => 'assets/images/heart_icon.svg';
 
   /// File path: assets/images/house_icon.svg
   String get houseIcon => 'assets/images/house_icon.svg';
+
+  /// File path: assets/images/logo_icon.svg
+  String get logoIcon => 'assets/images/logo_icon.svg';
 
   /// File path: assets/images/logout_icon.png
   AssetGenImage get logoutIcon =>
@@ -42,8 +59,10 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
         backArrow,
+        gamepadIcon,
         heartIcon,
         houseIcon,
+        logoIcon,
         logoutIcon,
         menuIcon,
         settingsIcon,
@@ -54,6 +73,7 @@ class $AssetsImagesGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 

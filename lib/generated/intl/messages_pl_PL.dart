@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "deal_details_screen_label":
             MessageLookupByLibrary.simpleMessage("Detale"),
         "error_view_default_message": MessageLookupByLibrary.simpleMessage(
-            "Coś poszło nie tak, spróbuj ponownie później.")
+            "Coś poszło nie tak, spróbuj ponownie później."),
+        "splash_screen_loading_label":
+            MessageLookupByLibrary.simpleMessage("Ładowanie...")
       };
 }

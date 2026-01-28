@@ -6,5 +6,7 @@
   "wishlist_screen_message": "Wishlist",
   "profile_screen_message": "Profile",
 
-  "deal_details_screen_label": "Details"
+  "deal_details_screen_label": "Details",
+
+  "splash_screen_loading_label": "Loading..."
 }
