@@ -1,7 +1,6 @@
 import 'package:flutteronimo/common/data_models/deal_item/ws/deal_item_ws.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-@freezed
 class DealItem {
   final String dealID;
   final String title;

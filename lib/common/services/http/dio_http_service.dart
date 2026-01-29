@@ -166,7 +166,7 @@ class DioHttpService extends HttpService {
     switch (environment) {
       case Environment.dev:
       case Environment.qa:
-        return const Duration(milliseconds: 3000);
+        return const Duration(milliseconds: 10000);
       default:
         return const Duration(milliseconds: 45000);
     }

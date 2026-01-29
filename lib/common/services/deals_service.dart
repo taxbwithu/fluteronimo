@@ -15,8 +15,15 @@ class DealsService {
     required this.httpService,
   });
 
-  Future<List<DealItemWs>?> readDealList() async {
-    final response = await httpService.get<String>(path: _dealsPath);
+  Future<List<DealItemWs>?> readDealList({
+    required int currentPage,
+  }) async {
+    final response = await httpService.get<String>(
+      path: _dealsPath,
+      queryParameters: {
+        "pageNumber": currentPage,
+      },
+    );
     List<dynamic> decodedResponse = ServiceUtil.decodeListResponse(response);
     return decodedResponse.map((e) => DealItemWs.fromJson(e)).toList();
   }
@@ -24,7 +31,8 @@ class DealsService {
   Future<DealDetails> readDealDetails({
     required String dealId,
   }) async {
-    final response = await httpService.get<String>(path: _dealsPath + "?id=$dealId");
+    final response =
+        await httpService.get<String>(path: _dealsPath + "?id=$dealId");
     dynamic decodedResponse = ServiceUtil.decodeResponse(response);
     return DealDetails.fromJson(decodedResponse);
   }

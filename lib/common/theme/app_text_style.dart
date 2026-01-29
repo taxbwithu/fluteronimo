@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutteronimo/gen/colors.gen.dart';
 
 class AppTextStyle {
   static TextStyle title() {
@@ -6,7 +7,7 @@ class AppTextStyle {
       fontSize: 24.0,
       fontFamily: "Inter",
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: ColorName.white,
     );
   }
 
@@ -15,16 +16,27 @@ class AppTextStyle {
       fontSize: 17.0,
       fontFamily: "Inter",
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: ColorName.white,
     );
   }
 
-  static TextStyle bold() {
+  static TextStyle body2Bold() {
     return const TextStyle(
+      fontSize: 15.0,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w600,
+      color: ColorName.white,
+    );
+  }
+
+  static TextStyle bold({
+    Color? color,
+  }) {
+    return TextStyle(
       fontSize: 17.0,
       fontFamily: "Inter",
       fontWeight: FontWeight.bold,
-      color: Colors.white,
+      color: color ?? ColorName.white,
     );
   }
 
@@ -34,8 +46,41 @@ class AppTextStyle {
       fontFamily: "Inter",
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: ColorName.white,
       height: 1.2,
+    );
+  }
+
+  static TextStyle caption1crossed({
+    Color? color,
+  }) {
+    return TextStyle(
+      fontSize: 13,
+      decoration: TextDecoration.lineThrough,
+      decorationColor: ColorName.white.withAlpha(40),
+      fontFamily: "Inter",
+      decorationThickness: 2,
+      color: color ?? ColorName.white,
+    );
+  }
+
+  static TextStyle caption2({
+    Color? color,
+  }) {
+    return TextStyle(
+      fontSize: 12.0,
+      fontFamily: "Inter",
+      color: color ?? Colors.white,
+    );
+  }
+
+  static TextStyle caption2Bold() {
+    return const TextStyle(
+      fontSize: 12.0,
+      fontFamily: "Inter",
+      fontWeight: FontWeight.w600,
+      color: ColorName.white,
+      letterSpacing: 0.2,
     );
   }
 
@@ -44,7 +89,7 @@ class AppTextStyle {
       fontSize: 11.0,
       fontFamily: "Inter",
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: ColorName.white,
       letterSpacing: 0.2,
     );
   }
@@ -56,7 +101,7 @@ class AppTextStyle {
       fontSize: 11.0,
       fontFamily: "Inter",
       fontWeight: FontWeight.w700,
-      color: color ?? Colors.white,
+      color: color ?? ColorName.white,
       letterSpacing: 0.2,
     );
   }
