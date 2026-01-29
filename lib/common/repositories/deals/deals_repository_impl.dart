@@ -12,10 +12,11 @@ class DealsRepositoryImpl extends DealsRepository {
     required this.service,
   });
 
-  //TODO replace with pagination
   @override
-  Future<List<DealItem>?> readDealList() async {
-    final itemsWs = await service.readDealList();
+  Future<List<DealItem>?> readDealList({
+    required int currentPage,
+  }) async {
+    final itemsWs = await service.readDealList(currentPage: currentPage);
     final items = itemsWs?.map((e) => DealItem.fromWsData(e)).toList();
     return filterByTitle(dealItems: items);
   }

@@ -74,8 +74,8 @@ class WishlistView extends StatelessWidget {
             itemCount: data.length,
             itemBuilder: (BuildContext context, int index) {
               return DealCard(
-                dealItem: data[index],
-                onTap: (dealId) => print("test"),//context.read<WishlistBloc>().add(OpenDealDetailsEvent(context: context, dealId: dealId)),
+                deal: data[index],
+                onDealTap: () => {}
               );
             },
           );

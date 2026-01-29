@@ -2,13 +2,14 @@ import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
 import 'package:flutteronimo/common/data_models/game_info/game_info.dart';
 import 'package:flutteronimo/common/database/database_helper.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
+import 'package:flutteronimo/common/repositories/wishlist/wishlist_repository.dart';
 import 'package:flutteronimo/common/utils/extensions/iterable_extensions.dart';
 
 import '../../data_models/cheapest_price/cheapest_price.dart';
 import '../../data_models/deal_item/deal_item.dart';
 import '../../services/deals_service.dart';
 
-class StubWishlistRepository extends DealsRepository {
+class StubWishlistRepository extends WishlistRepository {
   final DatabaseHelper database;
 
   StubWishlistRepository({
@@ -17,7 +18,9 @@ class StubWishlistRepository extends DealsRepository {
 
   //TODO replace with pagination
   @override
-  Future<List<DealItem>?> readWishlist() async {
+  Future<List<DealDetails>?> readWishlist() async {
+    return null;
+  
     // final items = await service.readDealList();
     // return filterByTitle(dealItems: items);
   }
@@ -50,8 +53,9 @@ class StubWishlistRepository extends DealsRepository {
   }
 
   @override
-  Future<List<DealItem>?> readDealList() async {
-    // TODO fill in the blanks
-    return null;
+  Future<dynamic> saveWishlistItem({required DealDetails dealDetails}) {
+    // TODO: implement saveWishlistItem
+    throw UnimplementedError();
   }
+  
 }
