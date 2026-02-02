@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/game_info/status/game_status.dart';
+import 'package:flutteronimo/gen/colors.gen.dart';
 
 class GameStatusSelector extends StatelessWidget {
   final GameStatus current;
@@ -28,7 +29,7 @@ class GameStatusSelector extends StatelessWidget {
           ),
           selected: isSelected,
           selectedColor: const Color(0xFF5CD85A),
-          backgroundColor: const Color(0xFF1A1A1A),
+          backgroundColor: ColorName.primaryDark,
           onSelected: (_) => onChanged(status),
         );
       }).toList(),
