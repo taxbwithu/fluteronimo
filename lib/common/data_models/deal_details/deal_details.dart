@@ -1,22 +1,24 @@
 import 'package:flutteronimo/common/data_models/cheapest_price/cheapest_price.dart';
 import 'package:flutteronimo/common/data_models/deal_details/cheaper_stores/cheaper_stores.dart';
+import 'package:flutteronimo/common/data_models/deal_details/ws/deal_details_ws.dart';
 import 'package:flutteronimo/common/data_models/game_info/game_info.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'deal_details.freezed.dart';
+class DealDetails {
+  final GameInfo gameInfo;
+  final CheapestPrice cheapestPrice;
+  final List<CheaperStores> cheaperStores;
 
-part 'deal_details.g.dart';
+  DealDetails({
+    required this.gameInfo,
+    required this.cheapestPrice,
+    required this.cheaperStores,
+  });
 
-@freezed
-class DealDetails with _$DealDetails {
-  @JsonSerializable(explicitToJson: true)
-  const factory DealDetails({
-    @JsonKey(name: "gameInfo") required GameInfo gameInfo,
-    @JsonKey(name: "cheapestPrice") required CheapestPrice cheapestPrice,
-    @JsonKey(name: "cheaperStores") required List<CheaperStores> cheaperStores,
-  }) = _DealDetails;
-
-  factory DealDetails.fromJson(Map<String, Object?> json) =>
-      _$DealDetailsFromJson(json);
-  
+  factory DealDetails.fromWsData(DealDetailsWs wsData) {
+    return DealDetails(
+      gameInfo: GameInfo.fromWsData(wsData.gameInfo),
+      cheapestPrice: wsData.cheapestPrice,
+      cheaperStores: wsData.cheaperStores,
+    );
+  }
 }

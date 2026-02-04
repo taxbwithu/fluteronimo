@@ -1,30 +1,62 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutteronimo/common/data_models/game_info/ws/game_info_ws.dart';
 
-part 'game_info.freezed.dart';
+class GameInfo {
+  final String? storeID;
+  final String? gameID;
+  final String? name;
+  final String? steamAppID;
+  final String? salePrice;
+  final String? retailPrice;
+  final String? steamRatingText;
+  final String? steamRatingPercent;
+  final String? metacriticScore;
+  final DateTime? releaseDate;
+  final String? publisher;
+  final String? thumbnail;
+  final String? thumbnailFull;
 
-part 'game_info.g.dart';
+  GameInfo({
+    required this.storeID,
+    required this.gameID,
+    required this.name,
+    required this.steamAppID,
+    required this.salePrice,
+    required this.retailPrice,
+    required this.steamRatingText,
+    required this.steamRatingPercent,
+    required this.metacriticScore,
+    required this.releaseDate,
+    required this.publisher,
+    required this.thumbnail,
+    required this.thumbnailFull,
+  });
 
-DateTime? _timestampToDate(int timestamp) => timestamp == 0 ? null : DateTime.fromMillisecondsSinceEpoch(timestamp * 1000000);
+  factory GameInfo.fromWsData(GameInfoWs wsData) {
+    return GameInfo(
+      storeID: wsData.storeID,
+      gameID: wsData.gameID,
+      name: wsData.name,
+      steamAppID: wsData.steamAppID,
+      salePrice: wsData.salePrice,
+      retailPrice: wsData.retailPrice,
+      steamRatingText: wsData.steamRatingText,
+      steamRatingPercent: wsData.steamRatingPercent,
+      metacriticScore: wsData.metacriticScore,
+      releaseDate: wsData.releaseDate,
+      publisher: wsData.publisher,
+      thumbnail: wsData.thumb,
+      thumbnailFull: toSteamHeader(
+        steamAppID: wsData.steamAppID,
+        thumb: wsData.thumb,
+      ),
+    );
+  }
 
-@freezed
-class GameInfo with _$GameInfo {
-  @JsonSerializable(explicitToJson: true)
-  const factory GameInfo({
-    @JsonKey(name: "storeID") required String? storeID,
-    @JsonKey(name: "gameID") required String? gameID,
-    @JsonKey(name: "name") required String? name,
-    @JsonKey(name: "steamAppID") required String? steamAppID,
-    @JsonKey(name: "salePrice") required String? salePrice,
-    @JsonKey(name: "retailPrice") required String? retailPrice,
-    @JsonKey(name: "steamRatingText") required String? steamRatingText,
-    @JsonKey(name: "steamRatingPercent") required String? steamRatingPercent,
-    @JsonKey(name: "metacriticScore") required String? metacriticScore,
-    @JsonKey(name: "releaseDate", fromJson: _timestampToDate) required DateTime? releaseDate,
-    @JsonKey(name: "publisher") required String? publisher,
-    @JsonKey(name: "thumb") required String? thumb,
-  }) = _GameInfo;
-
-  factory GameInfo.fromJson(Map<String, Object?> json) =>
-      _$GameInfoFromJson(json);
-  
+  static String? toSteamHeader({
+    required String? steamAppID,
+    required String? thumb,
+  }) {
+    if (steamAppID == null || steamAppID.isEmpty) return thumb;
+    return 'https://cdn.cloudflare.steamstatic.com/steam/apps/$steamAppID/library_600x900.jpg';
+  }
 }

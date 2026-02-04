@@ -1,17 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
+import 'package:flutteronimo/common/data_models/game_info/status/game_status.dart';
 import 'package:flutteronimo/common/repositories/dependency_graph.dart';
 import 'package:flutteronimo/feature/deal_details/vm/deal_details_vm.dart';
 import 'package:flutteronimo/feature/deal_details/widget/details_header_image.dart';
+import 'package:flutteronimo/feature/deal_details/widget/details_price_card.dart';
+import 'package:flutteronimo/feature/deal_details/widget/details_ratings_row.dart';
+import 'package:flutteronimo/feature/deal_details/widget/details_title_row.dart';
+import 'package:flutteronimo/feature/deal_details/widget/game_status_selector.dart';
 import 'package:flutteronimo/gen/colors.gen.dart';
-import 'package:flutteronimo/generated/l10n.dart';
 import 'package:provider/provider.dart';
-
-import '../../../common/factories/components_factory.dart';
-import '../../../common/theme/app_decorator.dart';
-import '../../../common/widgets/navigation_bar/app_navigation_bar.dart';
-import '../widget/deal_details_card.dart';
 
 @RoutePage()
 class DealDetailsScreen extends StatefulWidget {
@@ -66,31 +65,31 @@ class _DealDetailsScreenState extends State<DealDetailsScreen> {
         if (data != null) {
           return CustomScrollView(
             slivers: [
-              DetailsHeaderImage(game: game),
+              DetailsHeaderImage(game: data.gameInfo),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _TitleRow(
-                        title: game.name,
-                        isWishlisted: isWishlisted,
-                        onWishlistTap: onToggleWishlist,
+                      DetailsTitleRow(
+                        title: data.gameInfo.name ?? "",
+                        isWishlisted: false,
+                        onWishlistTap: () => print("handlewishist"),
                       ),
                       const SizedBox(height: 8),
-                      _RatingsRow(game: game),
+                      DetailsRatingsRow(game: data.gameInfo),
                       const SizedBox(height: 16),
-                      _PriceCard(
-                        salePrice: game.salePrice,
-                        retailPrice: game.retailPrice,
-                        cheapestEver: cheapestEver,
-                        cheapestDate: cheapestDate,
+                      DetailsPriceCard(
+                        salePrice: data.gameInfo.salePrice ?? "",
+                        retailPrice: data.gameInfo.retailPrice ?? "",
+                        cheapestEver: data.cheapestPrice.cheapestPrice ?? "",
+                        cheapestDate: data.cheapestPrice.cheapestPriceDate.toString(),
                       ),
                       const SizedBox(height: 16),
-                      _GameStatusSelector(
-                        current: gameStatus,
-                        onChanged: onStatusChanged,
+                      GameStatusSelector(
+                        current: GameStatus.playing,
+                        onChanged: (status) => print("handleOnChanged"),
                       ),
                       const SizedBox(height: 24),
                       const Text(
@@ -106,16 +105,16 @@ class _DealDetailsScreenState extends State<DealDetailsScreen> {
                 ),
               ),
               SliverList.separated(
-                itemCount: otherStores.length,
+                itemCount: data.cheaperStores.length,
                 separatorBuilder: (_, __) => const Divider(
                   color: Colors.white12,
                   height: 1,
                 ),
                 itemBuilder: (context, index) {
-                  final store = otherStores[index];
+                  final store = data.cheaperStores[index];
                   return ListTile(
                     title: Text(
-                      store.storeName,
+                      store.storeID ?? "",
                       style: const TextStyle(color: Colors.white),
                     ),
                     trailing: Row(
@@ -128,7 +127,7 @@ class _DealDetailsScreenState extends State<DealDetailsScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        if (store.isBest)
+                        if (true)
                           const Padding(
                             padding: EdgeInsets.only(left: 8),
                             child: Text(

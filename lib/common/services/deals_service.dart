@@ -1,4 +1,4 @@
-import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
+import 'package:flutteronimo/common/data_models/deal_details/ws/deal_details_ws.dart';
 import 'package:flutteronimo/common/data_models/deal_item/ws/deal_item_ws.dart';
 import 'package:flutteronimo/common/services/http/http_service.dart';
 import 'package:flutteronimo/common/utils/list/list_extension.dart';
@@ -28,12 +28,12 @@ class DealsService {
     return decodedResponse.map((e) => DealItemWs.fromJson(e)).toList();
   }
 
-  Future<DealDetails> readDealDetails({
+  Future<DealDetailsWs> readDealDetails({
     required String dealId,
   }) async {
     final response =
         await httpService.get<String>(path: _dealsPath + "?id=$dealId");
     dynamic decodedResponse = ServiceUtil.decodeResponse(response);
-    return DealDetails.fromJson(decodedResponse);
+    return DealDetailsWs.fromJson(decodedResponse);
   }
 }

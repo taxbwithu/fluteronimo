@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/game_info/game_info.dart';
+import 'package:flutteronimo/common/data_models/game_info/ws/game_info_ws.dart';
 
 class DetailsRatingsRow extends StatelessWidget {
   final GameInfo game;

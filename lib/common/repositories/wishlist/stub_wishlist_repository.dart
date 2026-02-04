@@ -1,5 +1,6 @@
 import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
-import 'package:flutteronimo/common/data_models/game_info/game_info.dart';
+import 'package:flutteronimo/common/data_models/deal_details/ws/deal_details_ws.dart';
+import 'package:flutteronimo/common/data_models/game_info/ws/game_info_ws.dart';
 import 'package:flutteronimo/common/database/database_helper.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/repositories/wishlist/wishlist_repository.dart';
