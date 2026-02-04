@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
 import 'package:flutteronimo/common/repositories/dependency_graph.dart';
 import 'package:flutteronimo/feature/deal_details/vm/deal_details_vm.dart';
+import 'package:flutteronimo/feature/deal_details/widget/details_header_image.dart';
 import 'package:flutteronimo/gen/colors.gen.dart';
 import 'package:flutteronimo/generated/l10n.dart';
 import 'package:provider/provider.dart';
@@ -52,52 +53,99 @@ class _DealDetailsScreenState extends State<DealDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      backgroundColor: ColorName.safeAreaDark,
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: AppDecorator.drawBackgroundGradient(),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              AppNavigationBar(
-                screenTitle: Texts.current.deal_details_screen_label,
-                leadingButton: ComponentsFactory.createBackArrowButton(),
-                onLeadingTap: () => _viewModel.closeScreen(context: context),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 8.0),
-                  child: _buildDealCard(),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      backgroundColor: const Color(0xFF0E0E0E),
+      body: _buildScreenContent(),
     );
   }
 
-  Widget _buildDealCard() {
+  Widget _buildScreenContent() {
     return StreamBuilder<DealDetails?>(
       stream: _viewModel.screenContentSubject.stream,
       builder: (context, snapshot) {
         final data = snapshot.data;
         if (data != null) {
-          return Container(
-            padding: const EdgeInsets.symmetric(
-                vertical: 8.0, horizontal: 8.0),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.black12,
-              borderRadius: BorderRadius.circular(4.0),
-            ),
-            child: DealDetailsCard(
-              data: data,
-            ),
+          return CustomScrollView(
+            slivers: [
+              DetailsHeaderImage(game: game),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _TitleRow(
+                        title: game.name,
+                        isWishlisted: isWishlisted,
+                        onWishlistTap: onToggleWishlist,
+                      ),
+                      const SizedBox(height: 8),
+                      _RatingsRow(game: game),
+                      const SizedBox(height: 16),
+                      _PriceCard(
+                        salePrice: game.salePrice,
+                        retailPrice: game.retailPrice,
+                        cheapestEver: cheapestEver,
+                        cheapestDate: cheapestDate,
+                      ),
+                      const SizedBox(height: 16),
+                      _GameStatusSelector(
+                        current: gameStatus,
+                        onChanged: onStatusChanged,
+                      ),
+                      const SizedBox(height: 24),
+                      const Text(
+                        'Other stores',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SliverList.separated(
+                itemCount: otherStores.length,
+                separatorBuilder: (_, __) => const Divider(
+                  color: Colors.white12,
+                  height: 1,
+                ),
+                itemBuilder: (context, index) {
+                  final store = otherStores[index];
+                  return ListTile(
+                    title: Text(
+                      store.storeName,
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          '\$${store.salePrice}',
+                          style: const TextStyle(
+                            color: Color(0xFF5CD85A),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        if (store.isBest)
+                          const Padding(
+                            padding: EdgeInsets.only(left: 8),
+                            child: Text(
+                              'Best',
+                              style: TextStyle(
+                                color: Color(0xFF5CD85A),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    onTap: () {},
+                  );
+                },
+              ),
+            ],
           );
         } else {
           return Container(

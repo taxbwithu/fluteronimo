@@ -1,4 +1,5 @@
 import 'package:flutteronimo/common/data_models/cheapest_price/cheapest_price.dart';
+import 'package:flutteronimo/common/data_models/deal_details/cheaper_stores/cheaper_stores.dart';
 import 'package:flutteronimo/common/data_models/game_info/game_info.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,6 +13,7 @@ class DealDetails with _$DealDetails {
   const factory DealDetails({
     @JsonKey(name: "gameInfo") required GameInfo gameInfo,
     @JsonKey(name: "cheapestPrice") required CheapestPrice cheapestPrice,
+    @JsonKey(name: "cheaperStores") required List<CheaperStores> cheaperStores,
   }) = _DealDetails;
 
   factory DealDetails.fromJson(Map<String, Object?> json) =>
