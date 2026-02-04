@@ -26,10 +26,10 @@ class StubWishlistRepository extends WishlistRepository {
   }
 
   @override
-  Future<DealDetails> readDealDetails({
+  Future<DealDetails?> readDealDetails({
     required String dealId,
   }) async {
-    return DealDetails(
+    /*return DealDetails(
       gameInfo: GameInfo(
         storeID: '1',
         gameID: '123',
@@ -48,7 +48,7 @@ class StubWishlistRepository extends WishlistRepository {
         cheapestPrice: '9.99',
         cheapestPriceDate: DateTime.now(),
       ),
-    );
+    );*/
     // return service.readDealDetails(dealId: dealId);
   }
 
