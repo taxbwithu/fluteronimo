@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutteronimo/common/data_models/game_info/game_info.dart';
+import 'package:flutteronimo/common/data_models/game_info/ws/game_info_ws.dart';
+import 'package:flutteronimo/generated/l10n.dart';
 
 class DetailsHeaderImage extends StatelessWidget {
   final GameInfo game;
@@ -9,7 +11,7 @@ class DetailsHeaderImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 220,
+      expandedHeight: 340,
       pinned: true,
       backgroundColor: Colors.black,
       flexibleSpace: FlexibleSpaceBar(
@@ -17,8 +19,9 @@ class DetailsHeaderImage extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.network(
-              game.thumb ?? "",
+              game.thumbnailFull ?? Texts.current.common_no_data_separator,
               fit: BoxFit.cover,
+              alignment: Alignment.topCenter,
             ),
             Positioned.fill(
               child: DecoratedBox(

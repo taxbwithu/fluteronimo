@@ -48,6 +48,7 @@ class DealsRepositoryImpl extends DealsRepository {
   Future<DealDetails> readDealDetails({
     required String dealId,
   }) async {
-    return service.readDealDetails(dealId: dealId);
+    final wsData = await service.readDealDetails(dealId: dealId);
+    return DealDetails.fromWsData(wsData);
   }
 }

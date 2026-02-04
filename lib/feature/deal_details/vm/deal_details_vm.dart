@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutteronimo/common/app_router/app_coordinator.dart';
 import 'package:flutteronimo/common/data_models/deal_details/deal_details.dart';
+import 'package:flutteronimo/common/data_models/deal_details/ws/deal_details_ws.dart';
 import 'package:flutteronimo/common/data_models/deal_item/deal_item.dart';
 import 'package:flutteronimo/common/repositories/deals/deals_repository.dart';
 import 'package:flutteronimo/common/utils/rx/rx_extensions.dart';
